@@ -1,4 +1,4 @@
-### Your Team Repo is: t3-versus
+### Your Team Repo is: t4-versus
 
 ## I could not find your files. If you need helping moving them to github just ask me after class.
 
@@ -12,7 +12,7 @@
 # Step 1: open terminal
 # Step 2: login to cs ssh by: ssh username@login.cs.duke.edu
 # Step 3: cd public_html
-## STEP 4: git clone https://github.com/cs-190/t3-versus.git
+## STEP 4: git clone https://github.com/cs-190/t4-versus.git
 
 
 ### How to use github:
