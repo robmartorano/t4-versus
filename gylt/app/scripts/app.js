@@ -1,3 +1,17 @@
+$('#login-section').hide();
+$('#sign-up-section').hide();
+$('#login-button').click(function(event) {
+    event.preventDefault();
+    $('#sign-up-section').hide();
+    /*$('#login-section').fadeIn();*/
+    $('#login-section').fadeIn();
+});
+
+$('#sign-up-button').click(function() {
+    event.preventDefault();
+    $('#login-section').hide();
+    $('#sign-up-section').fadeIn();  
+});
 //jQuery is required to run this code
 $( document ).ready(function() {
 
@@ -33,4 +47,31 @@ function initBannerVideoSize(element){
 
     scaleBannerVideoSize(element);
 
+}
+
+function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    //console.log(windowHeight);
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+    });
 }
