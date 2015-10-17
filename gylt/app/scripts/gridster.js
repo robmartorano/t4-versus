@@ -3,7 +3,7 @@ var gridster;
 $(function() {
   gridster = $(".gridster > ul").gridster({
       widget_margins: [10, 10],
-      widget_base_dimensions: [50, 50],
+      widget_base_dimensions: [53, 53],
       min_cols: 11,
       min_rows: 22,
       resize: {
