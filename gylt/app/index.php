@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php require_once("login.php");	?>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -30,7 +29,7 @@
                     <a href="workspace.html"><button class="bold-button" id="sign-up-go" type="submit">go</button></a>
                 </form>
                     
-                <form action="login.php" method="post" class="login-signup" id="login-section">
+                <form action="checklogin.php" method="post" class="login-signup" id="login-section">
                     <input placeholder="email address" id="login-email" required>
                     <input type="password" placeholder="password" id="login-password" required>
                     <a href="workspace.html"><button class="bold-button" id="login-go" type="submit">go</button></a>
