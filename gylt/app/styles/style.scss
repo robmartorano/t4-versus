@@ -8,259 +8,257 @@ $dark-orange: #8c3703;
 $red: rgba(255,104,115,1);
 
 body {
-  margin: 0;
-  font-family: Avenir, sans-serif;
-  color: $gray;
-  background: $light-gray;
+    margin: 0;
+    font-family: Avenir, sans-serif;
+    color: $gray;
+    background: $light-gray;
 }
 
 #menu-container {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 3em;
-  background-color: $light-blue; /* almost black */
-  text-align: right;
-  top: 0;
-  position: fixed;
-  box-shadow: $box-shadow;
-  z-index: 1000;
-  display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 3em;
+    background-color: $light-blue; /* almost black */
+    text-align: right;
+    top: 0;
+    position: fixed;
+    box-shadow: $box-shadow;
+    z-index: 1000;
+    display: block;
 
-  .menu-btn {
-    display: inline-block;
-    width: 5em; /* each menu item block will be this width */
-    text-align: center;
-    height: 100%;
-    line-height: 3em; /* set to same height as ul so it is vertically centered */
+    .menu-btn {
+        display: inline-block;
+        width: 5em; /* each menu item block will be this width */
+        text-align: center;
+        height: 100%;
+        line-height: 3em; /* set to same height as ul so it is vertically centered */
 
-    .menu-link {
-      text-decoration: none;
-      color: white;
+        .menu-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-link:hover {
+            opacity: 0.5;
+        }
     }
-
-    .menu-link:hover {
-      opacity: 0.5;
-    }
-  }
 }
 
 #logo {
-  float: left;
+    float: left;
 }
 
 #workspace {
-  display: inline-block;
-  float: left;
-  width: 51em;
-  height: 66em;
-  background: white;
-  vertical-align: top;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-top: 4em;
-  margin-bottom: 2em;
-  box-shadow: $box-shadow;
+    display: inline-block;
+    float: left;
+    width: 51em;
+    height: 66em;
+    background: white;
+    vertical-align: top;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    box-shadow: $box-shadow;
 }
 
 /* panel accordion transitions */
 .transition {
-  transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .no-select {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .flipIn {
-  animation: flipdown 0.5s ease both;
+    animation: flipdown 0.5s ease both;
 }
 /* END panel accordion transitions */
 
 #right-panel {
-  position: fixed;
-  display: inline-block;
-  float: left;
-  width: 15em;
-  background: $gray;
-  color: white;
-  vertical-align: top;
-  margin-top: 4em;
-  margin-right: 1em;
-  padding: 0 1em;
-  box-shadow: $box-shadow;
-  overflow-y: scroll;
+    position: fixed;
+    display: inline-block;
+    float: left;
+    width: 15em;
+    background: $gray;
+    color: white;
+    vertical-align: top;
+    margin-top: 4em;
+    margin-right: 1em;
+    padding: 0 1em;
+    box-shadow: $box-shadow;
+    overflow-y: scroll;
 
-  #right-panel-title {
-    background-color: none;
-    margin: .25em 0;
-    border-bottom: 1px solid white;
-  }
+    #right-panel-title {
+        background-color: none;
+        margin: .25em 0;
+        border-bottom: 1px solid white;
+    } 
 
-  ul {
-    list-style: none;
-    perspective: 900;
-    padding: 0;
-    margin: 0;
-
-    li {
-      position: relative;
-      padding: 0;
-      margin: 0;
-      padding-bottom: 4px;
-      padding-top: 18px;
-      border-top: 1px dotted white;
-      @extend .flipIn;
-
-      h4.panel-section-title {
-        line-height: 110%;
-        display: block;
+    ul {
+        list-style: none;
+        perspective: 900;
+        padding: 0;
         margin: 0;
-        cursor: pointer;
-        @extend .no-select;
-        font-weight: 200;
-      }
 
-      i {
-        position: absolute;
-        transform: translate( -6px , 0 );
-        margin-top: 16px;
-        right: 0;
-      }
+        li {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 4px;
+            padding-top: 18px;
+            border-top: 1px dotted white;
+            @extend .flipIn;
+
+            h4.panel-section-title {
+                line-height: 110%;
+                display: block;
+                margin: 0;
+                cursor: pointer;
+                @extend .no-select;
+                font-weight: 200;
+            }
+
+            i {
+                position: absolute;
+                transform: translate( -6px , 0 );
+                margin-top: 16px;
+                right: 0;
+            }
         
-      &:before , &:after {
-        content: "";
-        @extend .transition;
-        position: absolute;
-        background-color: $orange;
-        width: 3px;
-        height: 9px;
-      }
+            &:before , &:after {
+                content: "";
+                @extend .transition;
+                position: absolute;
+                background-color: $orange;
+                width: 3px;
+                height: 9px;
+            }
 
-      &:before {
-        transform: translate( -2px , 0 ) rotate( 45deg );
-      }
-
-      &:after {
-        transform: translate( 2px , 0 ) rotate( -45deg );
-      }
-
-      input[type=checkbox] {
-        position: absolute;
-        cursor: pointer;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-
-        
-        &:checked {
-          &~p {
-            margin-top: 0;
-            max-height: 0;
-            opacity: 0;
-            transform: translate( 0 , 50% );
-          }
-
-          &~i {
             &:before {
-              transform: translate( 2px , 0 ) rotate( 45deg );
+                transform: translate( -2px , 0 ) rotate( 45deg );
             }
+
             &:after {
-              transform: translate( -2px , 0 ) rotate( -45deg );
+                transform: translate( 2px , 0 ) rotate( -45deg );
             }
-          }
-        }
-      }
 
-      .panel-section {
-        position: relative;
-        overflow: hidden;
-        max-height: 800px;
-        @extend .transition;
-        opacity: 1;
-        transform: translate( 0 , 0 );
-        z-index: 2;
-        padding-left: 1em;
+            input[type=checkbox] {
+                position: absolute;
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+        
+                &:checked {
+                    &~p {
+                        margin-top: 0;
+                        max-height: 0;
+                        opacity: 0;
+                        transform: translate( 0 , 50% );
+                    }
 
-        label {
-          font-size: .75em;
-        }
+                    &~i {
+                        &:before {
+                            transform: translate( 2px , 0 ) rotate( 45deg );
+                        }
+                        &:after {
+                            transform: translate( -2px , 0 ) rotate( -45deg );
+                        }
+                    }
+                }
+            }
 
-        button {
-          width: auto;
-          height: 2em;
-          border: 0px;
-          border-radius: .25em;
-          background-color: $orange;
-          color: white;
-          padding: 0px 10px;
-          margin: 0 1em;
-          transition: all .4s;
-        }
+            .panel-section {
+                position: relative;
+                overflow: hidden;
+                max-height: 800px;
+                @extend .transition;
+                opacity: 1;
+                transform: translate( 0 , 0 );
+                z-index: 2;
+                padding-left: 1em;
 
-        button:hover  {
-          background-color: $mid-orange;
-        }
+                label {
+                    font-size: .75em;
+                }
 
-        button:active {
-          background-color: $dark-orange;
-        }
+                button {
+                    width: auto;
+                    height: 2em;
+                    border: 0px;
+                    border-radius: .25em;
+                    background-color: $orange;
+                    color: white;
+                    padding: 0px 10px;
+                    margin: 0 1em;
+                    transition: all .4s;
+                }
 
-        .add-schedule-button {
-          display: block;
-          margin: 1em 0;
-        }
+                button:hover  {
+                    background-color: $mid-orange;
+                }
 
-        .add-item {
-          h5 {
-            margin-top: 1em;
-            margin-bottom: 0;
-          }
-          input {
-            border: 0px;
-            border-radius: .25em;
-            width: 30px;
-            padding: 5px;
-          }
-        }
+                button:active {
+                    background-color: $dark-orange;
+                }
+
+                .add-schedule-button {
+                    display: block;
+                    margin: 1em 0;
+                }
+
+                .add-item {
+                    h5 {
+                        margin-top: 1em;
+                        margin-bottom: 0;
+                    }
+                    input {
+                        border: 0px;
+                        border-radius: .25em;
+                        width: 30px;
+                        padding: 5px;
+                    }
+                }
       }
     }
   }
 }
   
 @keyframes flipdown {
-  0% {
-    opacity: 0;
-    transform-origin: top center;
-    transform: rotateX(-90deg);
-  }
-    
-  5% {
-    opacity: 1;
-  }
-    
-  80% {
-    transform: rotateX(8deg);
-  }
-    
-  83% {
-    transform: rotateX(6deg);
-  }
-  92% {
-    transform: rotateX(-3deg);
-  }
-    
-  100% {
-    transform-origin: top center;
-    transform: rotateX(0deg);
-  }
-    
+    0% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotateX(8deg);
+    }
+
+    83% {
+        transform: rotateX(6deg);
+    }
+    92% {
+        transform: rotateX(-3deg);
+    }
+
+    100% {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+    }
 }
