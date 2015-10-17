@@ -29,14 +29,45 @@
         </div><!--end workspace-->
 
         <div id="right-panel">
-            <h3>Add Components</h3>
-            <div>Size: </div>
-            <label for="dimension-x"></label>
-            <input type="text" id="dimension-x"/>
-            x
-            <label for="dimension-y"></label>
-            <input type="text" id="dimension-y"/>
-            <button id="add-rectangle">Add Rectangle</button>
+            <h3 id="right-panel-title">Editing Panel</h3>
+            <ul>
+                <li id="add-components">
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h4 class="panel-section-title">Add Components</h4>
+                    <div class="panel-section">
+                        <div class="add-item">
+                            <h5>Blank Box</h5>
+                            <input type="text" id="dimension-x-box"/>
+                            x
+                            <input type="text" id="dimension-y-box"/>
+                            <button id="add-rectangle">Add Box</button>
+                        </div>
+                        <div class="add-item">
+                            <h5>List Box</h5>
+                            <input type="text" id="dimension-x-list"/>
+                            x
+                            <input type="text" id="dimension-y-list"/>
+                            <button id="add-list">Add List</button>
+                        </div>
+                        <button class="add-schedule-button" id="add-month">Add Month</button>
+                        <button class="add-schedule-button" id="add-week">Add Week</button>
+                        <button class="add-schedule-button" id="add-day">Add Day</button>
+                    </div><!--end panel-section-->
+                </li><!--end add-components-->
+
+                <li id="design-components">
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h4 class="panel-section-title">Design Components</h4>
+                    <div class="panel-section">
+                        <input class="sample" id="sample-1" type="radio" checked><label for="sample-1">White</label>
+                        <input class="sample" id="sample-1" type="radio"><label for="sample-2">Blue</label>
+                    </div><!--end panel-section-->
+                </li><!--end design-components-->
+            </ul>
+            
+            
         </div><!--end right-panel-->
 
         <div id="contacts"></div>
@@ -55,6 +86,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>

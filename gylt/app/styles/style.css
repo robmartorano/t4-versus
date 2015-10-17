@@ -139,7 +139,25 @@ body#welcome {
   margin-bottom: 2em;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35); }
 
+/* panel accordion transitions */
+.transition, #right-panel ul li:before, #right-panel ul li:after, #right-panel ul li .panel-section {
+  transition: all 0.25s ease-in-out; }
+
+.no-select, #right-panel ul li h4.panel-section-title {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.flipIn, #right-panel ul li {
+  animation: flipdown 0.5s ease both; }
+
+/* END panel accordion transitions */
 #right-panel {
+  position: fixed;
   display: inline-block;
   float: left;
   width: 15em;
@@ -148,9 +166,114 @@ body#welcome {
   vertical-align: top;
   margin-top: 4em;
   margin-right: 1em;
-  padding: 1em;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35); }
+  padding: 0 1em;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  overflow-y: scroll; }
+  #right-panel #right-panel-title {
+    background-color: none;
+    margin: .25em 0;
+    border-bottom: 1px solid white; }
+  #right-panel ul {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0; }
+    #right-panel ul li {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 4px;
+      padding-top: 18px;
+      border-top: 1px dotted white; }
+      #right-panel ul li h4.panel-section-title {
+        line-height: 110%;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+        font-weight: 200; }
+      #right-panel ul li i {
+        position: absolute;
+        transform: translate(-6px, 0);
+        margin-top: 16px;
+        right: 0; }
+      #right-panel ul li:before, #right-panel ul li:after {
+        content: "";
+        position: absolute;
+        background-color: #D75404;
+        width: 3px;
+        height: 9px; }
+      #right-panel ul li:before {
+        transform: translate(-2px, 0) rotate(45deg); }
+      #right-panel ul li:after {
+        transform: translate(2px, 0) rotate(-45deg); }
+      #right-panel ul li input[type=checkbox] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0; }
+        #right-panel ul li input[type=checkbox]:checked ~ p {
+          margin-top: 0;
+          max-height: 0;
+          opacity: 0;
+          transform: translate(0, 50%); }
+        #right-panel ul li input[type=checkbox]:checked ~ i:before {
+          transform: translate(2px, 0) rotate(45deg); }
+        #right-panel ul li input[type=checkbox]:checked ~ i:after {
+          transform: translate(-2px, 0) rotate(-45deg); }
+      #right-panel ul li .panel-section {
+        position: relative;
+        overflow: hidden;
+        max-height: 800px;
+        opacity: 1;
+        transform: translate(0, 0);
+        z-index: 2;
+        padding-left: 1em; }
+        #right-panel ul li .panel-section label {
+          font-size: .75em; }
+        #right-panel ul li .panel-section button {
+          width: auto;
+          height: 2em;
+          border: 0px;
+          border-radius: .25em;
+          background-color: #D75404;
+          color: white;
+          padding: 0px 10px;
+          margin: 0 1em;
+          transition: all .4s; }
+        #right-panel ul li .panel-section button:hover {
+          background-color: #a54003; }
+        #right-panel ul li .panel-section button:active {
+          background-color: #8c3703; }
+        #right-panel ul li .panel-section .add-schedule-button {
+          display: block;
+          margin: 1em 0; }
+        #right-panel ul li .panel-section .add-item h5 {
+          margin-top: 1em;
+          margin-bottom: 0; }
+        #right-panel ul li .panel-section .add-item input {
+          border: 0px;
+          border-radius: .25em;
+          width: 30px;
+          padding: 5px; }
 
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg); }
+  5% {
+    opacity: 1; }
+  80% {
+    transform: rotateX(8deg); }
+  83% {
+    transform: rotateX(6deg); }
+  92% {
+    transform: rotateX(-3deg); }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg); } }
 @media screen and (max-width: 620px) {
   .video-container {
     background: url("../images/working-it/Snapshots/Working-it.jpg") center center/cover no-repeat;
