@@ -4,27 +4,6 @@ body {
   color: #666666;
   background: #E5E5E5; }
 
-.video-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -100; }
-  .video-container .filter {
-    z-index: 10;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%; }
-  .video-container .fullscreen-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    left: -100%; }
-
 #menu-container {
   list-style-type: none;
   margin: 0;
@@ -53,78 +32,8 @@ body {
     #menu-container .menu-btn .menu-link:hover {
       opacity: 0.5; }
 
-body#home a#nav-home,
-body#photos a#nav-photos,
-body#resume a#nav-resume {
-  color: #E5E5E5; }
-
 #logo {
   float: left; }
-
-body#welcome {
-  background: white; }
-  body#welcome #welcome-center-container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    display: block;
-    z-index: 50;
-    color: white;
-    margin: 5% auto; }
-    body#welcome #welcome-center-container h1 {
-      font-size: 8em;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0; }
-    body#welcome #welcome-center-container h4 {
-      font-size: 2em;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0; }
-    body#welcome #welcome-center-container .bold-button {
-      height: 40px;
-      width: 125px;
-      border: 0px;
-      border-radius: .3em;
-      font-size: 1em;
-      margin: 1em 0em; }
-      body#welcome #welcome-center-container .bold-button a {
-        text-decoration: none; }
-    body#welcome #welcome-center-container .bold-button#sign-up-button {
-      background-color: #99CCFF;
-      margin-right: .5em;
-      color: white; }
-    body#welcome #welcome-center-container .bold-button#login-button {
-      background-color: white;
-      border: 2px solid #99CCFF;
-      margin-left: .5em;
-      color: #99CCFF; }
-    body#welcome #welcome-center-container .bold-button:hover {
-      opacity: .8;
-      transition: opacity .3s; }
-    body#welcome #welcome-center-container input {
-      height: 30px;
-      width: 250px;
-      font-size: 1em;
-      color: #666666;
-      margin: .5em auto;
-      display: block;
-      border: 0px;
-      padding: .3em .5em;
-      border-radius: .1em; }
-    body#welcome #welcome-center-container #login-go, body#welcome #welcome-center-container #sign-up-go {
-      background: #99CCFF;
-      color: white;
-      width: 250px; }
-
-#move-welcome {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: block;
-  z-index: 50;
-  color: white;
-  margin: 5% auto; }
 
 #workspace {
   display: inline-block;
@@ -274,20 +183,5 @@ body#welcome {
   100% {
     transform-origin: top center;
     transform: rotateX(0deg); } }
-@media screen and (max-width: 620px) {
-  .video-container {
-    background: url("../images/working-it/Snapshots/Working-it.jpg") center center/cover no-repeat;
-    left: -80%; }
-
-  .fullscreen-video {
-    display: none; } }
-/* MOBILE */
-@media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
-  .video-container {
-    background: url("../images/working-it/Snapshots/Working-it.jpg") center center/cover no-repeat;
-    left: -80%; }
-
-  .fullscreen-video {
-    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

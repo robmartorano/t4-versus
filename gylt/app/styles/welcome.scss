@@ -1,0 +1,128 @@
+$box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+$light-blue: #99CCFF;
+$gray: #666666;
+$light-gray: #E5E5E5;
+$orange: #D75404;
+$mid-orange: #a54003;
+$dark-orange: #8c3703;
+$red: rgba(255,104,115,1);
+
+.video-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+
+    .filter {
+      z-index: 10;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+    }
+
+    .fullscreen-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      left: -100%;
+  }
+}
+
+body#welcome {
+  background: white;
+
+  #welcome-center-container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 50;
+    color: white;
+
+    margin: 5% auto;
+
+    h1 {
+      font-size: 8em;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+    }
+    h4 {
+      font-size: 2em;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+    }
+
+    .bold-button {
+      height: 40px;
+      width: 125px;
+      border: 0px;
+      border-radius: .3em;
+      font-size: 1em;
+      margin: 1em 0em;
+
+      a {
+        text-decoration: none;
+      }
+    }
+    .bold-button#sign-up-button {
+      background-color: $light-blue;
+      margin-right: .5em;
+      color: white;
+    }
+    .bold-button#login-button {
+      background-color: white;
+      border: 2px solid $light-blue;
+      margin-left: .5em;
+      color: $light-blue;
+    }
+    .bold-button:hover {
+      opacity: .8;
+      transition: opacity .3s;
+    }
+    input {
+      height: 30px;
+      width: 250px;
+      font-size: 1em;
+      color: $gray; 
+      margin: .5em auto;
+      display: block;
+      border: 0px;
+      padding: .3em .5em;
+      border-radius: .1em;
+    }
+    #login-go, #sign-up-go {
+      background: $light-blue;
+      color: white;
+      width: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .video-container {
+    background: url('../images/working-it/Snapshots/Working-it.jpg') center center / cover no-repeat;
+    left: -80%;
+  }
+
+  .fullscreen-video {
+    display: none;
+  }
+}
+
+/* MOBILE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
+  .video-container {
+    background: url('../images/working-it/Snapshots/Working-it.jpg') center center / cover no-repeat;
+    left: -80%;
+  }
+
+  .fullscreen-video {
+    display: none;
+  }
+}
