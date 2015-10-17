@@ -22,10 +22,10 @@
                 <button class="bold-button" id="sign-up-button">sign up</button>
                 <button class="bold-button" id="login-button">login</button>
                 <form action="signup.php" method="post"  class="login-signup" id="sign-up-section">
-                    <input placeholder="first name" id="first-name" autofocus required>
-                    <input placeholder="last name" id = "last-name" required>
-                    <input placeholder="email address" id="sign-up-email" required>
-                    <input type="password" placeholder="password" id="sign-up-password" required>
+                    <input placeholder="first name" name="first-name" id="first-name" autofocus required>
+                    <input placeholder="last name" name="last-name" id="last-name" required>
+                    <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
+                    <input type="password" placeholder="password" name="sign-up-password" id="sign-up-password" required>
                     <a href="workspace.html"><button class="bold-button" id="sign-up-go" type="submit">go</button></a>
                 </form>
                     

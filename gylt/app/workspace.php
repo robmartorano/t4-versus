@@ -13,7 +13,7 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="logo"><a href="index.html" class="menu-link" id="nav-home">gylt</a></li>
+                    <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="" class="menu-link" id="nav-about">Account</a></li>
                     <li class="menu-btn" id="photos-menu-btn"><a href="logout.php" class="menu-link" id="nav-photos">Sign Out</a></li>
