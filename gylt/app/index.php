@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
-require_once("login.php");
-require_once("signup.php");
-?>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
