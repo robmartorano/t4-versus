@@ -22,5 +22,7 @@ $password = $_POST['sign-up-password'];
 
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
-echo "Entered data successfully\n";
+echo "You have successfully signed up. An email was sent to ";
+echo $email;
+echo ". Welcome to gylt! <a href='workspace.php'>Start designing here</a";
 ?>
