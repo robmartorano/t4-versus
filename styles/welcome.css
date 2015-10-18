@@ -29,7 +29,8 @@ body#welcome {
     display: block;
     z-index: 50;
     color: white;
-    margin: 5% auto; }
+    transition: translate .3s;
+    margin: 15% auto; }
     body#welcome #welcome-center-container h1 {
       font-size: 8em;
       -webkit-margin-before: 0;
@@ -42,7 +43,7 @@ body#welcome {
       height: 40px;
       width: 125px;
       border: 0px;
-      border-radius: .3em;
+      border-radius: .2em;
       font-size: 1em;
       margin: 1em 0em; }
       body#welcome #welcome-center-container .bold-button a {
@@ -59,20 +60,22 @@ body#welcome {
     body#welcome #welcome-center-container .bold-button:hover {
       opacity: .8;
       transition: opacity .3s; }
-    body#welcome #welcome-center-container input {
-      height: 30px;
-      width: 250px;
-      font-size: 1em;
-      color: #666666;
-      margin: .5em auto;
-      display: block;
-      border: 0px;
-      padding: .3em .5em;
-      border-radius: .1em; }
-    body#welcome #welcome-center-container #login-go, body#welcome #welcome-center-container #sign-up-go {
-      background: #99CCFF;
-      color: white;
-      width: 250px; }
+    body#welcome #welcome-center-container .login-signup {
+      display: none; }
+      body#welcome #welcome-center-container .login-signup input {
+        height: 30px;
+        width: 250px;
+        font-size: 1em;
+        color: #666666;
+        margin: .5em auto;
+        display: block;
+        border: 0px;
+        padding: .3em .5em;
+        border-radius: .1em; }
+      body#welcome #welcome-center-container .login-signup #login-go, body#welcome #welcome-center-container .login-signup #sign-up-go {
+        background: #99CCFF;
+        color: white;
+        width: 250px; }
 
 @media screen and (max-width: 620px) {
   .video-container {

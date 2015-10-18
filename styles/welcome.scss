@@ -44,8 +44,9 @@ body#welcome {
     display: block;
     z-index: 50;
     color: white;
+    transition: translate .3s;
 
-    margin: 5% auto;
+    margin: 15% auto;
 
     h1 {
       font-size: 8em;
@@ -62,7 +63,7 @@ body#welcome {
       height: 40px;
       width: 125px;
       border: 0px;
-      border-radius: .3em;
+      border-radius: .2em;
       font-size: 1em;
       margin: 1em 0em;
 
@@ -85,21 +86,25 @@ body#welcome {
       opacity: .8;
       transition: opacity .3s;
     }
-    input {
-      height: 30px;
-      width: 250px;
-      font-size: 1em;
-      color: $gray; 
-      margin: .5em auto;
-      display: block;
-      border: 0px;
-      padding: .3em .5em;
-      border-radius: .1em;
-    }
-    #login-go, #sign-up-go {
-      background: $light-blue;
-      color: white;
-      width: 250px;
+    .login-signup {
+      display: none;
+      
+      input {
+        height: 30px;
+        width: 250px;
+        font-size: 1em;
+        color: $gray; 
+        margin: .5em auto;
+        display: block;
+        border: 0px;
+        padding: .3em .5em;
+        border-radius: .1em;
+      }
+      #login-go, #sign-up-go {
+        background: $light-blue;
+        color: white;
+        width: 250px;
+      }
     }
   }
 }
