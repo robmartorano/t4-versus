@@ -68,6 +68,9 @@ body#welcome {
     body#welcome #welcome-center-container #sign-up-section {
       display: none;
       transition: all .3s ease .15s; }
+    body#welcome #welcome-center-container .facebook {
+      width: 250px;
+      height: auto; }
     body#welcome #welcome-center-container input {
       height: 30px;
       width: 250px;
@@ -91,7 +94,8 @@ footer {
   footer a {
     color: #99CCFF;
     text-decoration: none;
-    font-weight: 400; }
+    font-weight: 400;
+    font-size: 1.25em; }
     footer a span {
       color: #D75404; }
 

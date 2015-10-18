@@ -22,6 +22,7 @@
             <button class="bold-button" id="sign-up-button">sign up</button>
             <button class="bold-button" id="login-button">login</button>
             <form action="signup.php" method="post"  class="login-signup" id="sign-up-section">
+                <img src="images/facebook.png" class="facebook"/>
                 <input placeholder="first name" name="first-name" id="first-name" autofocus required>
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
@@ -30,6 +31,7 @@
             </form>
                 
             <form action="checklogin.php" method="post" class="login-signup" id="login-section">
+                <img src="images/facebook.png" class="facebook"/>
                 <input placeholder="email address" id="login-email" required>
                 <input type="password" placeholder="password" id="login-password" required>
                 <a href="workspace.html"><button class="bold-button" id="login-go" type="submit">login</button></a>
