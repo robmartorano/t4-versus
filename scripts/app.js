@@ -34,4 +34,6 @@ $(function() {
 	    }
 	    alreadyMoved = true;
 	});
+
+	$('footer').delay(3000).addClass('pulse');
 });

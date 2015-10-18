@@ -128,12 +128,52 @@ footer {
   a {
     color: $light-blue;
     text-decoration: none;
+    font-weight: 400;
 
     span {
       color: $orange;
     }
   }
 }
+
+
+.pulse{
+  animation-name: pulse;
+  -webkit-animation-name: pulse;  
+
+  animation-duration: 1.25s; 
+  -webkit-animation-duration: 1.25s;
+
+  animation-iteration-count: 2;
+  -webkit-animation-iteration-count: 2;
+
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+}
+
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+    opacity: 0.7;   
+  }
+  75% {
+    transform: scale(1);
+    opacity: 1; 
+  }      
+}
+
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.05);
+    opacity: 0.7;   
+  }
+  75% {
+    -webkit-transform: scale(1);
+    opacity: 1; 
+  }    
+}
+
+
 /* RESPONSIVENESS */
 @media screen and (max-width: 620px) {
   .video-container {
