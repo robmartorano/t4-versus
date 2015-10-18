@@ -5,11 +5,15 @@ $(function() {
 	$('#login-button').click(function() {
 		console.log("login click");
 	    $('#sign-up-section').hide();
+	    $('#sign-up-button').removeClass('bold-button-active');
+	    $('#login-button').addClass('bold-button-active');
 	    $('#login-section').fadeIn();
+	    $('#login-section').css("display", "block");
+	    $('#sign-up-section').hide();
 	    $('#login-email').focus();
 	    if (!alreadyMoved) {
 	    	$('#welcome-center-container').animate({
-			    'marginTop' : "-=12%"
+			    'marginTop' : "-=12%",
 			});
 	    }
 	    alreadyMoved = true;
@@ -18,15 +22,16 @@ $(function() {
 	$('#sign-up-button').click(function() {
 		console.log("signup click");
 	    $('#login-section').hide();
-	    $('#sign-up-section').fadeIn();  
+	    $('#login-button').removeClass('bold-button-active');
+	    $('#sign-up-button').addClass('bold-button-active');
+	    $('#sign-up-section').fadeIn(); 
+	    $('#sign-up-section').css("display", "block"); 
 	    $('#first-name').focus();
 	    if (!alreadyMoved) {
 	    	$('#welcome-center-container').animate({
-			    'marginTop' : "-=12%"
+			    'marginTop' : "-=12%",
 			});
 	    }
 	    alreadyMoved = true;
 	});
-
-
 });

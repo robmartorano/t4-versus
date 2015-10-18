@@ -26,17 +26,19 @@
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
                 <input type="password" placeholder="password" name="sign-up-password" id="sign-up-password" required>
-                <a href="workspace.html"><button class="bold-button" id="sign-up-go" type="submit">go</button></a>
+                <a href="workspace.html"><button class="bold-button" id="sign-up-go" type="submit">register</button></a>
             </form>
                 
             <form action="checklogin.php" method="post" class="login-signup" id="login-section">
                 <input placeholder="email address" id="login-email" required>
                 <input type="password" placeholder="password" id="login-password" required>
-                <a href="workspace.html"><button class="bold-button" id="login-go" type="submit">go</button></a>
+                <a href="workspace.html"><button class="bold-button" id="login-go" type="submit">login</button></a>
             </form>
 
         </div><!--end welcome-center-container-->
-
+        <footer>
+            <a href="" id="about-link">what is <span>gylt</span>?</a>
+        </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>

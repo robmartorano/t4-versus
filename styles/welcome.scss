@@ -44,7 +44,7 @@ body#welcome {
     display: block;
     z-index: 50;
     color: white;
-    transition: translate .3s;
+    transition: translate .5s ease;
 
     margin: 15% auto;
 
@@ -55,6 +55,7 @@ body#welcome {
     }
     h4 {
       font-size: 2em;
+      color: $orange;
       -webkit-margin-before: 0;
       -webkit-margin-after: 0;
     }
@@ -71,44 +72,69 @@ body#welcome {
         text-decoration: none;
       }
     }
-    .bold-button#sign-up-button {
+    .bold-button {
       background-color: $light-blue;
-      margin-right: .5em;
       color: white;
+      transition: all ease 0.3s;
     }
-    .bold-button#login-button {
+    #sign-up-button {
+      margin-right: 1em;
+    }
+    .bold-button-active {
       background-color: white;
       border: 2px solid $light-blue;
-      margin-left: .5em;
       color: $light-blue;
     }
     .bold-button:hover {
       opacity: .8;
       transition: opacity .3s;
     }
-    .login-signup {
+
+    #login-section {
       display: none;
-      
-      input {
-        height: 30px;
-        width: 250px;
-        font-size: 1em;
-        color: $gray; 
-        margin: .5em auto;
-        display: block;
-        border: 0px;
-        padding: .3em .5em;
-        border-radius: .1em;
-      }
-      #login-go, #sign-up-go {
-        background: $light-blue;
-        color: white;
-        width: 250px;
-      }
+      transition: all .3s ease .15s;
+    }
+
+    #sign-up-section {
+      display: none;
+      transition: all .3s ease .15s;
+    }
+
+    input {
+      height: 30px;
+      width: 250px;
+      font-size: 1em;
+      color: $gray; 
+      margin: .5em auto;
+      display: block;
+      border: 0px;
+      padding: .3em .5em;
+      border-radius: .1em;
+    }
+    #login-go, #sign-up-go {
+      background: $orange;
+      color: white;
+      width: 250px;
     }
   }
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  
+  a {
+    color: $light-blue;
+    text-decoration: none;
+
+    span {
+      color: $orange;
+    }
+  }
+}
+/* RESPONSIVENESS */
 @media screen and (max-width: 620px) {
   .video-container {
     background: url('../images/working-it/Snapshots/Working-it.jpg') center center / cover no-repeat;
