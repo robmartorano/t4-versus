@@ -27,14 +27,14 @@
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
                 <input type="password" placeholder="password" name="sign-up-password" id="sign-up-password" required>
-                <a href="workspace.html"><button class="bold-button" id="sign-up-go" type="submit">register</button></a>
+                <button class="bold-button" id="sign-up-go" type="submit">register</button>
             </form>
                 
             <form action="checklogin.php" method="post" class="login-signup" id="login-section">
                 <img src="images/facebook.png" class="facebook"/>
-                <input placeholder="email address" id="login-email" required>
-                <input type="password" placeholder="password" id="login-password" required>
-                <a href="workspace.html"><button class="bold-button" id="login-go" type="submit">login</button></a>
+                <input placeholder="email address" name="login-email" id="login-email" required>
+                <input type="password" placeholder="password" name="login-password" id="login-password" required>
+                <button class="bold-button" id="login-go" type="submit">login</button>
             </form>
 
         </div><!--end welcome-center-container-->

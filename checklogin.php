@@ -1,41 +1,41 @@
 <?php
+$dsn = 'mysql:host=cgi.cs.duke.edu;port=3306;dbname=rz30;';
+$username = 'rz30';
+$password = '9klB3Oh7nuMxI';
 
-$host="cgi.cs.duke.edu"; // Host name 
-$username="rz30"; // Mysql username 
-$password="9klB3Oh7nuMxI"; // Mysql password 
-$db_name="rz30"; // Database name 
-$tbl_name="users"; // Table name 
+try {
+    $db = new PDO($dsn, $username, $password);
 
-// Connect to server and select databse.
-mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-mysql_select_db("$db_name")or die("cannot select DB");
+} catch(PDOException $e) {
+    die('Could not connect to the database:<br/>' . $e);
+}
 
-echo "Successfully connected to database";
+$sqlq = "SELECT * FROM users WHERE email=:email AND password=:password";
 
-// username and password sent from form 
-$myusername=$_POST['login-email']; 
-$mypassword=$_POST['login-password']; 
+$login_email = $_POST['login-email']; 
+$login_password = $_POST['login-password']; 
 
-// To protect MySQL injection (more detail about MySQL injection)
-$myusername = stripslashes($myusername);
-$mypassword = stripslashes($mypassword);
-$myusername = mysql_real_escape_string($myusername);
-$mypassword = mysql_real_escape_string($mypassword);
-$sql="SELECT * FROM $tbl_name WHERE email='$myusername' and password='$mypassword'";
-$result=mysql_query($sql);
+echo "email: ";
+echo $login_email;
+echo "\npassword: ";
+echo $login_password;
 
-// Mysql_num_row is counting table row
-$count=mysql_num_rows($result);
+$getready = $db->prepare($sqlq);
+$getready->execute(array(':email' => $login_email, ':password' => $login_password));
+$result = $getready->fetchAll();
 
-// If result matched $myusername and $mypassword, table row must be 1 row
-if($count==1){
+// count number of rows in result
+$rows = count($result);
+echo "\nCount: ";
+echo $rows;
 
-// Register $myusername, $mypassword and redirect to file "login_success.php"
-session_register("myusername");
-session_register("mypassword"); 
-header("location:workspace.php");
+// if there is at least one match
+if($rows>=1){
+	// register $myusername, $mypassword and redirect to file "login_success.php"
+	$_SESSION['user'] = $login_email;
+	header("location:workspace.php");
 }
 else {
-echo "Wrong Username or Password";
+	echo "Wrong Username or Password";
 }
 ?>
