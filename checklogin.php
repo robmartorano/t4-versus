@@ -1,18 +1,20 @@
 <?php
 
-$host="localhost"; // Host name 
-$username=""; // Mysql username 
-$password=""; // Mysql password 
+$host="cgi.cs.duke.edu"; // Host name 
+$username="rz30"; // Mysql username 
+$password="9klB3Oh7nuMxI"; // Mysql password 
 $db_name="rz30"; // Database name 
 $tbl_name="users"; // Table name 
 
 // Connect to server and select databse.
-mysql_connect("cgi.cs.duke.edu", "$rz30", "$9klB3Oh7nuMxI")or die("cannot connect"); 
-mysql_select_db("rz30")or die("cannot select DB");
+mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+mysql_select_db("$db_name")or die("cannot select DB");
+
+echo "Successfully connected to database";
 
 // username and password sent from form 
-$myusername=$_POST['myusername']; 
-$mypassword=$_POST['mypassword']; 
+$myusername=$_POST['login-email']; 
+$mypassword=$_POST['login-password']; 
 
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
