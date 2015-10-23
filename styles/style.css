@@ -49,10 +49,7 @@ body {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35); }
 
 /* panel accordion transitions */
-.transition, #right-panel ul li:before, #right-panel ul li:after, #right-panel ul li .panel-section {
-  transition: all 0.25s ease-in-out; }
-
-.no-select, #right-panel ul li h4.panel-section-title {
+.no-select, #right-panel ul li label.panel-section-title {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -61,9 +58,25 @@ body {
   -ms-user-select: none;
   user-select: none; }
 
-.flipIn, #right-panel ul li {
+.flipIn, #right-panel ul li, #right-panel ul li input[type='checkbox']:checked ~ .panel-section {
   animation: flipdown 0.5s ease both; }
 
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg); }
+  5% {
+    opacity: 1; }
+  80% {
+    transform: rotateX(8deg); }
+  83% {
+    transform: rotateX(6deg); }
+  92% {
+    transform: rotateX(3deg); }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg); } }
 /* END panel accordion transitions */
 #right-panel {
   position: fixed;
@@ -75,70 +88,74 @@ body {
   vertical-align: top;
   margin-top: 4em;
   margin-right: 1em;
-  padding: 0 1em;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
   overflow-y: scroll; }
   #right-panel #right-panel-title {
     background-color: none;
-    margin: .25em 0;
-    border-bottom: 1px solid white; }
+    padding: .25em 1em;
+    margin: 0;
+    background-color: #3d3d3d; }
   #right-panel ul {
     list-style: none;
-    perspective: 900;
     padding: 0;
     margin: 0; }
     #right-panel ul li {
       position: relative;
       padding: 0;
-      margin: 0;
-      padding-bottom: 4px;
-      padding-top: 18px;
-      border-top: 1px dotted white; }
-      #right-panel ul li h4.panel-section-title {
-        line-height: 110%;
+      margin: 0; }
+      #right-panel ul li label.panel-section-title {
+        background: #5b5b5b;
+        /* fallback colour */
         display: block;
         margin: 0;
+        padding: 0 1em;
+        line-height: 200%;
+        height: 2em;
+        font-size: .85em;
         cursor: pointer;
-        font-weight: 200; }
-      #right-panel ul li i {
-        position: absolute;
-        transform: translate(-6px, 0);
-        margin-top: 16px;
-        right: 0; }
-      #right-panel ul li:before, #right-panel ul li:after {
-        content: "";
-        position: absolute;
-        background-color: #D75404;
-        width: 3px;
-        height: 9px; }
-      #right-panel ul li:before {
-        transform: translate(-2px, 0) rotate(45deg); }
-      #right-panel ul li:after {
-        transform: translate(2px, 0) rotate(-45deg); }
+        font-weight: 200;
+        text-shadow: 0 1px 1px #000;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+        border-top: 1px solid #E5E5E5;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5b5b5b), to(#3d3d3d));
+        background: -webkit-linear-gradient(top, #5b5b5b, #3d3d3d);
+        background: -moz-linear-gradient(top, #5b5b5b, #3d3d3d);
+        background: -ms-linear-gradient(top, #5b5b5b, #3d3d3d);
+        background: -o-linear-gradient(top, #5b5b5b, #3d3d3d); }
+      #right-panel ul li label.panel-section-title:hover {
+        background: #7aa3cc;
+        /* fallback colour */
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+        background: -webkit-linear-gradient(top, #566f82, #3e505e);
+        background: -moz-linear-gradient(top, #566f82, #3e505e);
+        background: -ms-linear-gradient(top, #566f82, #3e505e);
+        background: -o-linear-gradient(top, #566f82, #3e505e); }
       #right-panel ul li input[type=checkbox] {
         position: absolute;
         cursor: pointer;
         width: 100%;
         height: 100%;
-        z-index: 1;
-        opacity: 0; }
-        #right-panel ul li input[type=checkbox]:checked ~ p {
-          margin-top: 0;
-          max-height: 0;
-          opacity: 0;
-          transform: translate(0, 50%); }
-        #right-panel ul li input[type=checkbox]:checked ~ i:before {
-          transform: translate(2px, 0) rotate(45deg); }
-        #right-panel ul li input[type=checkbox]:checked ~ i:after {
-          transform: translate(-2px, 0) rotate(-45deg); }
+        display: none; }
+      #right-panel ul li input[type='checkbox']:checked ~ label {
+        background: #6b8eb2;
+        /* fallback colour */
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#99CCFF), to(#6b8eb2));
+        background: -webkit-linear-gradient(top, #99CCFF, #6b8eb2);
+        background: -moz-linear-gradient(top, #6b8eb2, #89b7e5);
+        background: -ms-linear-gradient(top, #6b8eb2, #89b7e5);
+        background: -o-linear-gradient(top, #6b8eb2, #89b7e5); }
+      #right-panel ul li input[type='checkbox']:checked ~ .panel-section {
+        height: auto;
+        display: block;
+        min-height: 40px;
+        max-height: 400px; }
       #right-panel ul li .panel-section {
         position: relative;
         overflow: hidden;
         max-height: 800px;
-        opacity: 1;
-        transform: translate(0, 0);
         z-index: 2;
-        padding-left: 1em; }
+        padding-left: 1em;
+        display: none; }
         #right-panel ul li .panel-section label {
           font-size: .75em; }
         #right-panel ul li .panel-section button {
@@ -166,22 +183,5 @@ body {
           border-radius: .25em;
           width: 30px;
           padding: 5px; }
-
-@keyframes flipdown {
-  0% {
-    opacity: 0;
-    transform-origin: top center;
-    transform: rotateX(-90deg); }
-  5% {
-    opacity: 1; }
-  80% {
-    transform: rotateX(8deg); }
-  83% {
-    transform: rotateX(6deg); }
-  92% {
-    transform: rotateX(-3deg); }
-  100% {
-    transform-origin: top center;
-    transform: rotateX(0deg); } }
 
 /*# sourceMappingURL=style.css.map */

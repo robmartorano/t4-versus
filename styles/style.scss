@@ -1,6 +1,9 @@
 $box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
 $light-blue: #99CCFF;
-$gray: #666666;
+$mid-blue: #6b8eb2;
+$mid-gray: #5b5b5b;
+$dark-gray: #3d3d3d;
+$text-gray: #666666;
 $light-gray: #E5E5E5;
 $orange: #D75404;
 $mid-orange: #a54003;
@@ -10,7 +13,7 @@ $red: rgba(255,104,115,1);
 body {
     margin: 0;
     font-family: Avenir, sans-serif;
-    color: $gray;
+    color: $text-gray;
     background: $light-gray;
 }
 
@@ -65,10 +68,6 @@ body {
 }
 
 /* panel accordion transitions */
-.transition {
-    transition: all 0.25s ease-in-out;
-}
-
 .no-select {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-touch-callout: none;
@@ -82,6 +81,34 @@ body {
 .flipIn {
     animation: flipdown 0.5s ease both;
 }
+
+@keyframes flipdown {
+    0% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotateX(8deg);
+    }
+
+    83% {
+        transform: rotateX(6deg);
+    }
+    92% {
+        transform: rotateX(3deg);
+    }
+
+    100% {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+    }
+}
 /* END panel accordion transitions */
 
 #right-panel {
@@ -89,24 +116,23 @@ body {
     display: inline-block;
     float: left;
     width: 15em;
-    background: $gray;
+    background: $text-gray;
     color: white;
     vertical-align: top;
     margin-top: 4em;
     margin-right: 1em;
-    padding: 0 1em;
     box-shadow: $box-shadow;
     overflow-y: scroll;
 
     #right-panel-title {
         background-color: none;
-        margin: .25em 0;
-        border-bottom: 1px solid white;
+        padding: .25em 1em;
+        margin: 0;
+        background-color: $dark-gray;
     } 
 
     ul {
         list-style: none;
-        perspective: 900;
         padding: 0;
         margin: 0;
 
@@ -114,42 +140,36 @@ body {
             position: relative;
             padding: 0;
             margin: 0;
-            padding-bottom: 4px;
-            padding-top: 18px;
-            border-top: 1px dotted white;
             @extend .flipIn;
 
-            h4.panel-section-title {
-                line-height: 110%;
+            label.panel-section-title {
+                background: $mid-gray; /* fallback colour */
                 display: block;
                 margin: 0;
+                padding: 0 1em;
+                line-height: 200%;
+                height: 2em;
+                font-size: .85em;
                 cursor: pointer;
                 @extend .no-select;
                 font-weight: 200;
+                text-shadow: 0 1px 1px #000;
+                box-shadow: $box-shadow;
+                border-top: 1px solid $light-gray;
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($mid-gray), to($dark-gray));
+                background: -webkit-linear-gradient(top, $mid-gray, $dark-gray);
+                background: -moz-linear-gradient(top, $mid-gray, $dark-gray);
+                background: -ms-linear-gradient(top, $mid-gray, $dark-gray);
+                background: -o-linear-gradient(top, $mid-gray, $dark-gray);
             }
 
-            i {
-                position: absolute;
-                transform: translate( -6px , 0 );
-                margin-top: 16px;
-                right: 0;
-            }
-        
-            &:before , &:after {
-                content: "";
-                @extend .transition;
-                position: absolute;
-                background-color: $orange;
-                width: 3px;
-                height: 9px;
-            }
-
-            &:before {
-                transform: translate( -2px , 0 ) rotate( 45deg );
-            }
-
-            &:after {
-                transform: translate( 2px , 0 ) rotate( -45deg );
+            label.panel-section-title:hover {
+                background: #7aa3cc; /* fallback colour */
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+                background: -webkit-linear-gradient(top, #566f82, #3e505e);
+                background: -moz-linear-gradient(top, #566f82, #3e505e);
+                background: -ms-linear-gradient(top, #566f82, #3e505e);
+                background: -o-linear-gradient(top, #566f82, #3e505e);
             }
 
             input[type=checkbox] {
@@ -157,37 +177,33 @@ body {
                 cursor: pointer;
                 width: 100%;
                 height: 100%;
-                z-index: 1;
-                opacity: 0;
-        
-                &:checked {
-                    &~p {
-                        margin-top: 0;
-                        max-height: 0;
-                        opacity: 0;
-                        transform: translate( 0 , 50% );
-                    }
+                display: none;
+            }
 
-                    &~i {
-                        &:before {
-                            transform: translate( 2px , 0 ) rotate( 45deg );
-                        }
-                        &:after {
-                            transform: translate( -2px , 0 ) rotate( -45deg );
-                        }
-                    }
-                }
+            input[type='checkbox']:checked ~ label {
+                background: $mid-blue; /* fallback colour */
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($light-blue), to($mid-blue));
+                background: -webkit-linear-gradient(top, $light-blue, $mid-blue);
+                background: -moz-linear-gradient(top, $mid-blue, #89b7e5);
+                background: -ms-linear-gradient(top, $mid-blue, #89b7e5);
+                background: -o-linear-gradient(top, $mid-blue, #89b7e5);
+            }
+
+            input[type='checkbox']:checked ~ .panel-section {
+                height: auto;
+                display: block;
+                min-height: 40px;
+                max-height: 400px;
+                @extend .flipIn;
             }
 
             .panel-section {
                 position: relative;
                 overflow: hidden;
                 max-height: 800px;
-                @extend .transition;
-                opacity: 1;
-                transform: translate( 0 , 0 );
                 z-index: 2;
                 padding-left: 1em;
+                display: none;
 
                 label {
                     font-size: .75em;
@@ -233,33 +249,5 @@ body {
       }
     }
   }
-}
-  
-@keyframes flipdown {
-    0% {
-        opacity: 0;
-        transform-origin: top center;
-        transform: rotateX(-90deg);
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    80% {
-        transform: rotateX(8deg);
-    }
-
-    83% {
-        transform: rotateX(6deg);
-    }
-    92% {
-        transform: rotateX(-3deg);
-    }
-
-    100% {
-        transform-origin: top center;
-        transform: rotateX(0deg);
-    }
 }
 

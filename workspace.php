@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <? require_once("logout.php"); ?>
+ <!--require_once("logout.php")-->
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -32,9 +32,8 @@
             <h3 id="right-panel-title">Editing Panel</h3>
             <ul>
                 <li id="add-components">
-                    <input type="checkbox" checked>
-                    <i></i>
-                    <h4 class="panel-section-title">Add Components</h4>
+                    <input type="checkbox" id="add-components-checkbox" checked>
+                    <label class="panel-section-title" for="add-components-checkbox"><i></i>Add Components</label>
                     <div class="panel-section">
                         <div class="add-item">
                             <h5>Blank Box</h5>
@@ -57,12 +56,10 @@
                 </li><!--end add-components-->
 
                 <li id="design-components">
-                    <input type="checkbox" checked>
-                    <i></i>
-                    <h4 class="panel-section-title">Design Components</h4>
+                    <input type="checkbox" id="design-components-checkbox">
+                    <label class="panel-section-title" for="design-components-checkbox"><i></i>Design Components</label>
                     <div class="panel-section">
-                        <input class="sample" id="sample-1" type="radio" checked><label for="sample-1">White</label>
-                        <input class="sample" id="sample-1" type="radio"><label for="sample-2">Blue</label>
+                        <p>Something</p>
                     </div><!--end panel-section-->
                 </li><!--end design-components-->
             </ul>
