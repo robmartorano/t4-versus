@@ -1,7 +1,8 @@
 .account-module {
   background: white;
   display: inline-block;
-  margin: 2em;
+  margin-left: 2em;
+  margin-top: 2em;
   padding: 2em;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); }
 
