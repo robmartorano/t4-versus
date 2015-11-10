@@ -40,11 +40,6 @@
     		<a href="workspace.php">return to my workspace</a>
     	</div><!--end nav-->
 
-    	
-
-    	
-
-
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
         <script src="scripts/app.js"></script>

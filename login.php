@@ -14,20 +14,28 @@ try {
     die('Could not connect to the database:<br/>' . $e);
 }
 $sqlq = "SELECT users (username,password,email) VALUES (:username,:password,:email)";
-// $sql = "UPDATE Test SET stuff=:stuff WHERE id=:id";
 
 $username = $_POST['username'];
+$username = stripslashes($username);
+$username = mysql_real_escape_string($username);
+
 $password = $_POST['password'];
+$password = stripslashes($password);
+$password = mysql_real_escape_string($password);
+
 $email = $_POST["email"];
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':username' => $username, ':password' => $password, ':email' => $email));
-if ($getready)
-// Register $myusername, $mypassword and redirect to file loginsucces
-session_register("username");
-session_register("password"); 
-echo "You have successfully logged in. <a href='workspace.php'>Click here to start being productive.</a>"; 
+
+$count = mysql_num_rows($getready);
+
+if (count == 1) {
+	// Register $myusername, $mypassword and redirect to file loginsucces
+	session_register("username");
+	session_register("password"); 
+	echo "You have successfully logged in. <a href='workspace.php'>Click here to start being productive.</a>"; 
 }
 else {
-echo "Wrong Username or Password";
+	echo "Wrong Username or Password";
 }
 ?>
