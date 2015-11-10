@@ -15,7 +15,7 @@
                 <ul id="menu-container">
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
-                    <li class="menu-btn" id="about-menu-btn"><a href="" class="menu-link" id="nav-about">Account</a></li>
+                    <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
                     <li class="menu-btn" id="photos-menu-btn"><a href="logout.php" class="menu-link" id="nav-photos">Sign Out</a></li>
                 </ul>
             </nav>
@@ -44,9 +44,7 @@
                         </div>
                         <div class="add-item">
                             <h5>List Box</h5>
-                            <input type="text" id="dimension-x-list"/>
-                            x
-                            <input type="text" id="dimension-y-list"/>
+                            <input type="text" id="list-length"/> &#35; lines
                             <button id="add-list">Add List</button>
                         </div>
                         <button class="add-schedule-button" id="add-month">Add Month</button>

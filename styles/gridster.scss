@@ -1,4 +1,9 @@
 /* Gridster styles */
+textarea, input {
+    outline: none;
+    border: 0;
+    text-overflow: clip;
+}
 
 ul#grid-list, ol {
     list-style: none;
@@ -9,10 +14,41 @@ ul#grid-list li {
     border: 1px #B5B5B5 solid;
 }
 
+/* each grid item*/
 ul#grid-list li:hover {
     opacity: 0.8;
 }
 
+.box {
+    padding: 2px;
+}
+
+.box-selected {
+    border-color: #99CCFF;
+    border-width: 2px;
+}
+
+.boxlist-li {
+    border: none !important;
+}
+
+.boxtext {
+    height: calc(100% - 15px);
+    width: 99%;
+    font-family: inherit;
+    font-size: .75em;
+
+    resize: none;
+}
+
+.boxlist-input {
+}
+
+.boxtitle, .boxlisttitle {
+    width: 99%;
+}
+
+/* entire height of gridster thus far*/
 #workspace:hover .gridster {
     opacity: 1;
 }

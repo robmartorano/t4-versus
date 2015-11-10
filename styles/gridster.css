@@ -1,37 +1,57 @@
 /* Gridster styles */
+textarea, input {
+  outline: none;
+  border: 0;
+  text-overflow: clip; }
 
 ul#grid-list, ol {
-    list-style: none;
-}
+  list-style: none; }
 
 ul#grid-list li {
-    background: white;
-    border: 1px #B5B5B5 solid;
-}
+  background: white;
+  border: 1px #B5B5B5 solid; }
 
+/* each grid item*/
 ul#grid-list li:hover {
-    opacity: 0.8;
-}
+  opacity: 0.8; }
 
+.box {
+  padding: 2px; }
+
+.box-selected {
+  border-color: #99CCFF;
+  border-width: 2px; }
+
+.boxlist-li {
+  border: none !important; }
+
+.boxtext {
+  height: calc(100% - 15px);
+  width: 99%;
+  font-family: inherit;
+  font-size: .75em;
+  resize: none; }
+
+.boxtitle, .boxlisttitle {
+  width: 99%; }
+
+/* entire height of gridster thus far*/
 #workspace:hover .gridster {
-    opacity: 1;
-}
+  opacity: 1; }
 
 .gridster {
-    width: 100%;
-    margin: 0 auto;
-
-    opacity: .8;
-
-    -webkit-transition: opacity .6s;
-    -moz-transition: opacity .6s;
-    -o-transition: opacity .6s;
-    -ms-transition: opacity .6s;
-    transition: opacity .6s;
-}
+  width: 100%;
+  margin: 0 auto;
+  opacity: .8;
+  -webkit-transition: opacity .6s;
+  -moz-transition: opacity .6s;
+  -o-transition: opacity .6s;
+  -ms-transition: opacity .6s;
+  transition: opacity .6s; }
 
 .gridster .gs_w {
-    cursor: pointer;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+/*# sourceMappingURL=gridster.css.map */
