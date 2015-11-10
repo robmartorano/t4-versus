@@ -1,11 +1,10 @@
 
 <?php
-session_start();
-if (!session_is_registered(myusername)) {
-	header("location:workspace.php");
-}
+	session_start();
+	if (!session_is_registered(username)) {
+		header("location:index.php");
+	}
 ?>
-
 <html>
 <body>
 Login Successful

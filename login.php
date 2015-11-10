@@ -31,8 +31,10 @@ $count = mysql_num_rows($getready);
 
 if (count == 1) {
 	// Register $myusername, $mypassword and redirect to file loginsucces
-	session_register("username");
-	session_register("password"); 
+	//session_register("username");
+	$_SESSION['username'] = $username;
+	//session_register("password"); 
+	$_SESSION['password'] = $password;
 	echo "You have successfully logged in. <a href='workspace.php'>Click here to start being productive.</a>"; 
 }
 else {
