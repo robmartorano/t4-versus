@@ -155,9 +155,9 @@ body {
         max-height: 800px;
         z-index: 2;
         padding-left: 1em;
-        display: none; }
-        #right-panel ul li .panel-section label {
-          font-size: .75em; }
+        padding-bottom: 1em;
+        display: none;
+        font-size: .75em; }
         #right-panel ul li .panel-section button {
           width: auto;
           height: 2em;
@@ -183,5 +183,7 @@ body {
           border-radius: .25em;
           width: 30px;
           padding: 5px; }
+        #right-panel ul li .panel-section .design-attributes {
+          padding-top: 1em; }
 
 /*# sourceMappingURL=style.css.map */

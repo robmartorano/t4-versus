@@ -204,11 +204,9 @@ body {
                 max-height: 800px;
                 z-index: 2;
                 padding-left: 1em;
+                padding-bottom: 1em;
                 display: none;
-
-                label {
-                    font-size: .75em;
-                }
+                font-size: .75em;
 
                 button {
                     width: auto;
@@ -246,6 +244,10 @@ body {
                         width: 30px;
                         padding: 5px;
                     }
+                }
+
+                .design-attributes {
+                    padding-top: 1em;
                 }
       }
     }

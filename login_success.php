@@ -1,7 +1,7 @@
-
 <?php
-	if ($_SESSION['user'] != $login_email) {
-		header("location:index.php");
+	session_start();
+	if (!isset ($_SESSION["email"])) {
+		//header("location:index.php");
 	}
 ?>
 <html>
