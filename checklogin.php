@@ -11,7 +11,7 @@ try {
     die('Could not connect to the database:<br/>' . $e);
 }
 
-$sqlq = "SELECT * FROM users WHERE email=:email AND password=:password";
+$sqlq = "SELECT email, first_name FROM users WHERE email=:email AND password=:password";
 
 $login_email = $_POST['login-email']; 
 $login_password = $_POST['login-password']; 
@@ -23,7 +23,8 @@ echo $login_password;
 
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $login_email, ':password' => $login_password));
-$result = $getready->fetchAll();
+$result = $getready->fetch();
+var_dump($result);
 
 // count number of rows in result
 $rows = count($result);
@@ -33,7 +34,8 @@ echo $rows;
 // if there is at least one match
 if($rows>=1){
 	// register $myusername, $mypassword and redirect to file "login_success.php"
-	$_SESSION['user'] = $login_email;
+	$_SESSION['email'] = $result['email'];
+	$_SESSION['first_name'] = $result['first_name'];
 	header("location:workspace.php");
 }
 else {
