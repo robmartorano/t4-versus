@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php require_once("login_success.php"); ?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
