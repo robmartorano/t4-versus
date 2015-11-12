@@ -17,6 +17,7 @@ ul#grid-list li {
 /* each grid item*/
 ul#grid-list li:hover {
     opacity: 0.8;
+    cursor: pointer; cursor: hand;
 }
 
 .box {
@@ -30,6 +31,7 @@ ul#grid-list li:hover {
 
 .boxlist-li {
     border: none !important;
+    background-color: transparent !important;
 }
 
 .boxtext {
@@ -39,13 +41,16 @@ ul#grid-list li:hover {
     font-size: .75em;
 
     resize: none;
+    background-color: transparent;
 }
 
 .boxlist-input {
+    background-color: transparent;
 }
 
 .boxtitle, .boxlisttitle {
     width: 99%;
+    background-color: transparent;
 }
 
 /* entire height of gridster thus far*/

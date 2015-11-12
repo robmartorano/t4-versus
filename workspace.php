@@ -58,28 +58,28 @@
                     <input type="checkbox" id="design-components-checkbox">
                     <label class="panel-section-title" for="design-components-checkbox"><i></i>Design Components</label>
                     <div class="panel-section">
-                        <div class="design-attributes">Background Color: <input class="jscolor" value="FFFFFF"></div>
+                        <div class="design-attributes">Background Color: <input class="jscolor" id="background-color" value="FFFFFF"></div>
                         <div class="design-attributes">Border Width: 
-                            <select>
+                            <select id="border-width">
                                 <option>1px</option>
                                 <option>2px</option>
                                 <option>3px</option>
                             </select>
                         </div>
-                        <div class="design-attributes">Border Color: <input class="jscolor" value="B5B5B5"></div>
+                        <div class="design-attributes">Border Color: <input class="jscolor" id="border-color" value="B5B5B5"></div>
                         <div class="design-attributes">Font Family: 
-                            <select>
-                                <option>Avenir</option>
-                                <option>Helvetica</option>
-                                <option>Times New Roman</option>
-                                <option>Garamond</option>
+                            <select id="font-family">
+                                <option value="Avenir">Avenir</option>
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Times New Roman">PT Serif</option>
+                                <option value="Garamond">Mate</option>
                             </select>
                         </div>
                         <div class="design-attributes">Font Size: 
-                            <select>
-                                <option>0.75</option>
-                                <option>1</option>
-                                <option>1.25</option>
+                            <select id="font-size">
+                                <option>0.75em</option>
+                                <option>1em</option>
+                                <option>1.25em</option>
                             </select>
                         </div>
                     </div><!--end panel-section-->

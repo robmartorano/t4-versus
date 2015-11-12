@@ -31,20 +31,6 @@ $(function() {
     count++;
   });
   
-  $('#grid-list').on('click', 'li', function() {
-    console.log($(this).attr('id'));
-
-    $('#' + $(this).attr('id')).toggleClass('box-selected');
-
-    if ($('#' + this.id).hasClass('box-selected')) {
-      $('#' + this.id).css('border-color', '#99CCFF');
-      $('#' + this.id).css('border-width', '2px');
-    }
-    else {
-      $('#' + this.id).css('border-width', '1px');
-      $('#' + this.id).css('border-color', '#B5B5B5');
-    }
-  })
 
   $('#add-list').click(function() {
     var numLines = $('#list-length').val();
