@@ -24,7 +24,7 @@ echo $login_password;
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $login_email, ':password' => $login_password));
 $result = $getready->fetch();
-var_dump($result);
+//var_dump($result);
 
 // count number of rows in result
 $rows = count($result);
