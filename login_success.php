@@ -1,6 +1,7 @@
 
 <?php
-	if ($_SESSION['user'] != $login_email) {
+	session_start();
+	if (!isset ($_SESSION["email"])) {
 		header("location:index.php");
 	}
 ?>
