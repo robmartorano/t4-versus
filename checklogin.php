@@ -11,7 +11,7 @@ try {
     die('Could not connect to the database:<br/>' . $e);
 }
 
-$sqlq = "SELECT email, first_name FROM users WHERE email=:email AND password=:password";
+$sqlq = "SELECT * FROM users WHERE email=:email AND password=:password";
 
 $login_email = $_POST['login-email']; 
 $login_password = $_POST['login-password']; 
@@ -35,7 +35,9 @@ echo $rows;
 if($rows>=1){
 	// register $myusername, $mypassword and redirect to file "login_success.php"
 	$_SESSION['email'] = $result['email'];
+	$_SESSION['id'] = $result['user_id'];
 	$_SESSION['first_name'] = $result['first_name'];
+	$_SESSION['last_name'] = $result['last_name'];
 	header("location:workspace.php");
 }
 else {

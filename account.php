@@ -1,3 +1,4 @@
+<?php require_once("login_success.php"); ?>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -10,9 +11,9 @@
     <body>
     	<div class="account-module" id="user-profile">
     		<img src="images/placeholder-user.png" id="user-image"/>
-    		<div id="user-info">
+    		<div id="user-info"> 
     			<ul>
-    				<li><h2>username</h2></li>
+    				<li><h2><?php echo $_SESSION['first_name']; echo " "; echo $_SESSION['last_name']; ?></h2></li>
     				<li><strong>profile created:</strong> November 1st, 2015</li>
     				<li><strong>number of designs:</strong> 3</li>
     				<li><strong>about me:</strong> I like to design calendars.</li>
