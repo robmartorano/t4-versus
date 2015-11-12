@@ -63,24 +63,9 @@
                 </li><!--end design-components-->
             </ul>
             
-            
         </div><!--end right-panel-->
 
-        <div id="contacts"></div>
-
-        <script id="contactTemplate" type="text/template">
-            <img src="<%= photo %>" alt="<%= name %>" />
-            <h1><%= name %> <span><%= type %></span></h1>
-            <div><%= address %></div>
-            <dl>
-                <dt>Tel:</dt><dd><%= tel %></dd>
-                <dt>Email:</dt><dd><a href="mailto:<%= email %>"><%= email %></a></dd>
-            </dl>
-        </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 

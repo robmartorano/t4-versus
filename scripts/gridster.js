@@ -26,35 +26,39 @@ $(function() {
   $('#add-rectangle').click(function() {
     var xSize = $('#dimension-x-box').val();
     var ySize = $('#dimension-y-box').val();
-    gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxtitle" id="' + count + 'boxtitle" placeholder="title"/><textarea class="boxtext" type="text" id="' + count + 'boxtext"></textarea></li>', xSize, ySize, 1, 1);
+    gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxtitle" id="' + count + 'boxtitle" placeholder="title"><textarea class="boxtext" type="text" id="' + count + 'boxtext"></textarea></li>', xSize, ySize, 1, 1);
     $('#' + count + 'boxtitle').focus();
     count++;
   });
-  /*
-
-  var gridList = $('#grid-list');
-
-  for (var i = 0; i < gridList.length; i++) {
-    gridList[i].addEventListener('click', toggleSelect, true);
-  }
-  function toggleSelect() {
-    console.log('bubble: ' + this.id);
-  }
-  */
   
   $('#grid-list').on('click', 'li', function() {
-    console.log($(this).id);
-    //$('#' + this.id).css('border-color', '#99CCFF');
-    //$('#' + this.id).css('border-width', '2px');
-    //$(this).id.toggleClass('box-selected');
+    console.log($(this).attr('id'));
+
+    $('#' + $(this).attr('id')).toggleClass('box-selected');
+
+    if ($('#' + this.id).hasClass('box-selected')) {
+      $('#' + this.id).css('border-color', '#99CCFF');
+      $('#' + this.id).css('border-width', '2px');
+    }
+    else {
+      $('#' + this.id).css('border-width', '1px');
+      $('#' + this.id).css('border-color', '#B5B5B5');
+    }
   })
 
   $('#add-list').click(function() {
     var numLines = $('#list-length').val();
-    gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxlisttitle" placeholder="title" id="' + count + 'boxlisttitle"></input><ul id="' + count + 'boxlist"></ul></li>', 3, numLines/2, 1, 1);
+    var html = '<ul id="' + count + 'boxlist">';
+    var boxlisttextcount = 0;
     for (var i = 0; i < numLines; i++) {
-      $('#' + count + 'boxlist').append('<li class="boxlist-li"><input class="boxlist-input" id="' + count + 'boxlisttext"/></li>');
+      html +='<li class="boxlist-li"><input class="boxlist-input" id="' + boxlisttextcount + 'boxlisttext"></li>';
+      boxlisttextcount++;
     }
+    html += '</ul>';
+    if (numLines % 2 != 0) {
+      numLines++; // odd number causes fraction which causes problem with gridster
+    }
+    gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxlisttitle" placeholder="title" id="' + count + 'boxlisttitle">' + html + '</li>', 3, numLines/2, 1, 1);
     $('#' + count + 'boxlisttitle').focus();
     count++;
   })
