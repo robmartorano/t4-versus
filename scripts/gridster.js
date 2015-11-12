@@ -5,6 +5,7 @@ $(function() {
       serialize_params: function ($w, wgd) {
         return {
           id: $w.prop('id'),
+          style: $w.prop('style'),
           col: wgd.col,
           row: wgd.row,
           size_x: wgd.size_x,
@@ -47,8 +48,11 @@ $(function() {
     gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxlisttitle" placeholder="title" id="' + count + 'boxlisttitle">' + html + '</li>', 3, numLines/2, 1, 1);
     $('#' + count + 'boxlisttitle').focus();
     count++;
-  })
+  });
 
+  $('#save-button').click(function() {
+    console.log(gridster.serialize());
+  });
   
 });
 
