@@ -4,16 +4,29 @@
     <head>
         <meta charset="UTF-8" />
         <title>gylt</title>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
-        <link rel="stylesheet" href="styles/style.css"/>
-        <link rel="stylesheet" href="styles/gridster.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css" media="screen">
+        <link rel="stylesheet" href="styles/style.css" media="screen" />
+        <link rel="stylesheet" href="styles/gridster.css" media="screen" />
+
+        <style>
+            @media print {
+                #right-panel, header {
+                    display: none;
+                }
+
+                #workspace {
+                    display: block;
+                }
+            }
+        </style>
+
     </head>
 
     <body>
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?php echo $_SESSION['user']; ?></li>
+                    <li class="menu-btn" id="hello-user">hello <?php print $_SESSION['user']; ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
@@ -61,6 +74,15 @@
                         <p>Something</p>
                     </div><!--end panel-section-->
                 </li><!--end design-components-->
+
+                <li id="save-preview-print-functions">
+                    <input type="checkbox" id="save-preview-print-checkbox">
+                    <label class="panel-section-title" for="save-preview-print-checkbox"><i></i>Show Off</label>
+                    <div class="panel-section">
+                        <button class="save-preview-print-button" id="save-button">Save</button>
+                        <button class="save-preview-print-button" id="preview-button">Preview</button>
+                        <button class="save-preview-print-button" id="print-button">Print</button>
+                    </div>
             </ul>
             
             
@@ -86,6 +108,7 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>
+        <script src="script/print.jquery"></script>
 
     </body>
 </html>
