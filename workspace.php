@@ -1,12 +1,12 @@
-<?php require_once("login_success.php"); ?>
+<?#php require_once("login_success.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <title>gylt</title>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css" media="screen">
-        <link rel="stylesheet" href="styles/style.css" media="screen" />
-        <link rel="stylesheet" href="styles/gridster.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/gridster.css" />
 
         <style>
             @media print {
@@ -14,8 +14,15 @@
                     display: none;
                 }
 
+                @page { 
+                    padding: 0;
+                    margin: 0;
+                }
+
                 #workspace {
                     display: block;
+                    margin:0;
+                    box-shadow:none;
                 }
             }
         </style>
@@ -26,7 +33,7 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?php echo $_SESSION['first_name']; ?></li>
+                    <li class="menu-btn" id="hello-user">hello <?#php echo $_SESSION['first_name']; ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
@@ -117,7 +124,8 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>
-        <script src="script/print.jquery"></script>
+        <script src="scripts/capture_workspace.js"></script>
+        <!-- <script src="script/print.jquery"></script> -->
 
     </body>
 </html>
