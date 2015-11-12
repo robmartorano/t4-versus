@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dsn = 'mysql:host=cgi.cs.duke.edu;port=3306;dbname=rz30;';
 $username = 'rz30';
 $password = '9klB3Oh7nuMxI';
