@@ -28,5 +28,9 @@ echo $email;
 echo ". Welcome to gylt! <a href='workspace.php'>Start designing here</a>";
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
+$_SESSION['firstname'] = $firstname;
+$_SESSION['lastname'] = $lastname;
+$_SESSION['email'] = $email;
+
 header('Location: workspace.php');
 ?>
