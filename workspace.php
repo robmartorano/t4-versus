@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
     session_start();
 ?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <? php echo $_SESSION['username']; ?></li>
+                    <li class="menu-btn" id="hello-user">hello <?php echo $_SESSION['username']; ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
