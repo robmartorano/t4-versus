@@ -8,25 +8,6 @@
         <link rel="stylesheet" href="styles/style.css" />
         <link rel="stylesheet" href="styles/gridster.css" />
 
-        <style>
-            @media print {
-                #right-panel, header {
-                    display: none;
-                }
-
-                @page { 
-                    padding: 0;
-                    margin: 0;
-                }
-
-                #workspace {
-                    display: block;
-                    margin:0;
-                    box-shadow:none;
-                }
-            }
-        </style>
-
     </head>
 
     <body>

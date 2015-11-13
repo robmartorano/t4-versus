@@ -60,6 +60,7 @@ $(function() {
 		console.log($('#background-color').val());
 		$('.box-selected').each(function(i, obj) {
 		    $(this).css('background-color', $('#background-color').val());
+		    //$(this).attr('data-background-color', $('#background-color').val());
 		});
 	});
 	$('#border-color').change(function() {
@@ -67,6 +68,7 @@ $(function() {
 		$('.box-selected').each(function(i, obj) {
 			currentBorderColor = $('#border-color').val();
 		    $(this).css('border-color', currentBorderColor);
+		    //$(this).attr('data-border-color', currentBorderColor);
 		});
 	});
 	$('#border-width').change(function() {
@@ -74,6 +76,7 @@ $(function() {
 		$('.box-selected').each(function(i, obj) {
 			currentBorderWidth = $('#border-width').val();
 		    $(this).css('border-width', currentBorderWidth);
+		    //$(this).attr('data-border-width', currentBorderWidth);
 		});
 	});
 	$('#font-size').change(function() {
@@ -81,6 +84,7 @@ $(function() {
 		$('.box-selected').each(function(i, obj) {
 		    $(this).find('*').each(function() {
 		    	$(this).css('font-size', $('#font-size').val());
+		    	//$(this).attr('data-font-size', $('#font-size').val());
 		    });
 		});
 	});
@@ -89,6 +93,7 @@ $(function() {
 		$('.box-selected').each(function(i, obj) {
 		    $(this).find('*').each(function() {
 		    	$(this).css('font-family', $('#font-family').val());
+		    	//$(this).attr('data-font-family', $('#font-family').val());
 		    });
 		});
 	});
