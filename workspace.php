@@ -1,4 +1,4 @@
-<?php require_once("login_success.php"); ?>
+<?#3php require_once("login_success.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +14,7 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?php echo $_SESSION['first_name']; ?></li>
+                    <li class="menu-btn" id="hello-user">hello <?#php echo $_SESSION['first_name']; ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
@@ -88,12 +88,19 @@
                 <div class="panel-section">
                     <button class="save-preview-print-button" id="save-button">Save</button>
                     <button class="save-preview-print-button" id="preview-button">Preview</button>
-                    <button class="save-preview-print-button" id="print-button">Print</button>
+                    <button class="save-preview-print-button" id="print-button">Print</button></a>
                 </div>
-                    
+
             </ul>
             
         </div><!--end right-panel-->
+
+        <div id="overlay">
+            <a href="#" id="preview-exit"><img src="images/x.png"></a>
+            <div>
+                <p>Preview images go here.</p>
+            </div>
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>
@@ -103,6 +110,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>
         <script src="scripts/capture_workspace.js"></script>
+        <script src="scripts/preview.js"></script>
+        
         <!-- <script src="script/print.jquery"></script> -->
 
     </body>
