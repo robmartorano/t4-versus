@@ -26,8 +26,13 @@ $getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastn
 echo "You have successfully signed up. An email was sent to ";
 echo $email;
 echo ". Welcome to gylt! <a href='workspace.php'>Start designing here</a>";
+
+
 $_SESSION['email'] = $email;
 $_SESSION['first_name'] = $firstname;
+$_SESSION['last_name'] = $lastname;
+$_SESSION['user_id'] = $db->lastInsertId();
+
 
 header('Location: workspace.php');
 ?>
