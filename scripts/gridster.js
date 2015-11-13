@@ -51,7 +51,19 @@ $(function() {
   });
 
   $('#save-button').click(function() {
-    console.log(gridster.serialize());
+    var gridsterJSON = gridster.serialize();
+    console.log(gridsterJSON);
+    $.ajax({
+      type : "POST",
+      url : "saveGridster.php",
+      dataType : 'json', 
+      data : {
+          json : JSON.stringify(gridsterJSON)
+      },
+      success: function(data) {
+        console.log(data);
+      }
+    });
   });
   
 });
