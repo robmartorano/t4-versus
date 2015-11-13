@@ -5,8 +5,9 @@
         <meta charset="UTF-8" />
         <title>gylt</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
-        <link rel="stylesheet" href="styles/style.css"/>
-        <link rel="stylesheet" href="styles/gridster.css"/>
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/gridster.css" />
+
     </head>
 
     <body>
@@ -84,6 +85,12 @@
                         </div>
                     </div><!--end panel-section-->
                 </li><!--end design-components-->
+                <div class="panel-section">
+                    <button class="save-preview-print-button" id="save-button">Save</button>
+                    <button class="save-preview-print-button" id="preview-button">Preview</button>
+                    <button class="save-preview-print-button" id="print-button">Print</button>
+                </div>
+                    
             </ul>
             
         </div><!--end right-panel-->
@@ -95,6 +102,8 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>
+        <script src="scripts/capture_workspace.js"></script>
+        <!-- <script src="script/print.jquery"></script> -->
 
     </body>
 </html>
