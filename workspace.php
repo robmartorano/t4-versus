@@ -1,4 +1,4 @@
-<?#3php require_once("login_success.php"); ?>
+<?php require_once("login_success.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +14,7 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?#php echo $_SESSION['first_name']; ?></li>
+                    <li class="menu-btn" id="hello-user">hello <?php echo $_SESSION['first_name']; ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
                     <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
                     <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
