@@ -85,11 +85,15 @@
                         </div>
                     </div><!--end panel-section-->
                 </li><!--end design-components-->
-                <div class="panel-section">
-                    <button class="save-preview-print-button" id="save-button">Save</button>
-                    <button class="save-preview-print-button" id="preview-button">Preview</button>
-                    <button class="save-preview-print-button" id="print-button">Print</button>
-                </div>
+                <li>
+                    <input type="checkbox" id="save-preview-print-checkbox">
+                    <label class="panel-section-title" for="save-preview-print-checkbox"><i></i></label>
+                    <div class="panel-section">
+                        <button class="save-preview-print-button" id="save-button">Save</button>
+                        <button class="save-preview-print-button" id="preview-button">Preview</button>
+                        <button class="save-preview-print-button" id="print-button">Print</button>
+                    </div>
+                </li>
                     
             </ul>
             

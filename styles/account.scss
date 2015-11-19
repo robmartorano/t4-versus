@@ -25,6 +25,10 @@ body {
 	text-align: left;
 }
 
+#user-profile {
+	margin-top: 5em;
+}
+
 /* get all children of user-profile*/
 #user-profile > * {
 	display: inline-block;

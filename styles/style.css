@@ -194,11 +194,11 @@ body {
           padding: 0px 10px;
           margin: 0 1em;
           transition: all .4s; }
-        #right-panel ul li .panel-section button:hover {
+        #right-panel ul li .panel-section button:hover, #right-panel ul li .panel-section .save-preview-print-button:hover {
           background-color: #a54003; }
-        #right-panel ul li .panel-section button:active {
+        #right-panel ul li .panel-section button:active, #right-panel ul li .panel-section .save-preview-print-button:active {
           background-color: #8c3703; }
-        #right-panel ul li .panel-section .add-schedule-button {
+        #right-panel ul li .panel-section .add-schedule-button, #right-panel ul li .panel-section .save-preview-print-button {
           display: block;
           margin: 1em 0; }
         #right-panel ul li .panel-section .add-item h5 {

@@ -251,15 +251,15 @@ body {
                     transition: all .4s;
                 }
 
-                button:hover  {
+                button:hover, .save-preview-print-button:hover {
                     background-color: $mid-orange;
                 }
 
-                button:active {
+                button:active, .save-preview-print-button:active {
                     background-color: $dark-orange;
                 }
 
-                .add-schedule-button {
+                .add-schedule-button, .save-preview-print-button {
                     display: block;
                     margin: 1em 0;
                 }
