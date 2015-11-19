@@ -11,23 +11,6 @@ $mid-orange: #a54003;
 $dark-orange: #8c3703;
 $red: rgba(255,104,115,1);
 
-@media print {
-    #right-panel, header {
-        display: none;
-    }
-
-    @page { 
-        padding: 0;
-        margin: 0;
-    }
-
-    #workspace {
-        display: block;
-        margin:0;
-        box-shadow:none;
-    }
-}
-
 body {
     margin: 0;
     font-family: Avenir, sans-serif;
@@ -55,6 +38,7 @@ body {
         text-align: center;
         height: 100%;
         line-height: 3em; /* set to same height as ul so it is vertically centered */
+        vertical-align: top;
 
         .menu-link {
             text-decoration: none;
@@ -64,6 +48,10 @@ body {
         .menu-link:hover {
             opacity: 0.5;
         }
+    }
+
+    #hello-user {
+        width: 10em;
     }
 }
 
@@ -296,4 +284,22 @@ body {
     }
   }
 }
+
+@media print {
+    #right-panel, header {
+        display: none;
+    }
+
+    @page { 
+        padding: 0;
+        margin: 0;
+    }
+
+    #workspace {
+        display: block;
+        margin:0;
+        box-shadow:none;
+    }
+}
+
 

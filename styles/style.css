@@ -25,12 +25,15 @@ body {
     text-align: center;
     height: 100%;
     line-height: 3em;
-    /* set to same height as ul so it is vertically centered */ }
+    /* set to same height as ul so it is vertically centered */
+    vertical-align: top; }
     #menu-container .menu-btn .menu-link {
       text-decoration: none;
       color: white; }
     #menu-container .menu-btn .menu-link:hover {
       opacity: 0.5; }
+  #menu-container #hello-user {
+    width: 10em; }
 
 #logo {
   float: left; }
@@ -181,7 +184,7 @@ body {
         padding-bottom: 1em;
         display: none;
         font-size: .75em; }
-        #right-panel ul li .panel-section button {
+        #right-panel ul li .panel-section button, #right-panel ul li .panel-section .save-preview-print-button {
           width: auto;
           height: 2em;
           border: 0px;
@@ -208,5 +211,17 @@ body {
           padding: 5px; }
         #right-panel ul li .panel-section .design-attributes {
           padding-top: 1em; }
+
+@media print {
+  #right-panel, header {
+    display: none; }
+
+  @page {
+    padding: 0;
+    margin: 0; }
+  #workspace {
+    display: block;
+    margin: 0;
+    box-shadow: none; } }
 
 /*# sourceMappingURL=style.css.map */
