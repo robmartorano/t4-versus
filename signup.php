@@ -16,9 +16,14 @@ try {
 $sqlq = "INSERT INTO users (email, first_name, last_name, password) VALUES (:email, :firstname, :lastname, :password)";
 
 $email = $_POST['sign-up-email'];
+$email = mysql_real_escape_string(strip_tags($email));
 $firstname = $_POST['first-name'];
+$firstname = mysql_real_escape_string(strip_tags($firstname));
 $lastname = $_POST['last-name'];
-$password = password_hash($_POST['sign-up-password'], PASSWORD_DEFAULT);
+$lastname = mysql_real_escape_string(strip_tags($lastname));
+$password = $_POST['sign-up-password']
+$password = mysql_real_escape_string(strip_tags($password));
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
