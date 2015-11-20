@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
         <link rel="stylesheet" href="styles/style.css" />
         <link rel="stylesheet" href="styles/gridster.css" />
+        <link rel="stylesheet" href="styles/slidepanel.css" />
 
     </head>
 
@@ -16,9 +17,9 @@
                 <ul id="menu-container">
                     <li class="menu-btn" id="hello-user">hello <?php if (isset($_SESSION['first_name'])) {echo $_SESSION['first_name'];} ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
-                    <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
-                    <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
-                    <li class="menu-btn" id="photos-menu-btn"><a href="logout.php" class="menu-link" id="nav-photos">Sign Out</a></li>
+                    <li class="menu-btn" id="designs-menu-btn"><a href="" class="menu-link" id="nav-designs">Designs</a></li>
+                    <li class="menu-btn" id="account-menu-btn"><a href="account.php" class="menu-link" id="nav-account">Account</a></li>
+                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">Sign Out</a></li>
                 </ul>
             </nav>
         </header>
@@ -99,6 +100,23 @@
             </ul>
             
         </div><!--end right-panel-->
+
+        <div class="cd-panel from-right">
+            <header class="cd-panel-header">
+                <div id="panel-header-content">Designs</div>
+                <a href="#0" class="cd-panel-close">Close</a>
+            </header>
+         
+            <div class="cd-panel-container">
+                <div class="cd-panel-content">
+                    <ul id="panel-designs-list">
+                        <li>Design 1</li>
+                        <li>Design 2</li>
+                        <li>Design 3</li>
+                    </ul>
+                </div> <!-- end cd-panel-content -->
+            </div> <!-- end cd-panel-container -->
+        </div> <!-- end cd-panel -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>

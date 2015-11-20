@@ -1,0 +1,104 @@
+/* source https://codyhouse.co/gem/css-slide-in-panel/ */
+.cd-panel {
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.6s;
+  -moz-transition: visibility 0s 0.6s;
+  transition: visibility 0s 0.6s;
+}
+ 
+.cd-panel.is-visible {
+	visibility: visible;
+	transition: visibility 0s 0s;
+	-webkit-transition: visibility 0s 0s;
+  	-moz-transition: visibility 0s 0s;
+}
+
+.cd-panel-header {
+  position: fixed;
+  width: 50%;
+  height: 3em;
+  line-height: 3em;
+  color: white;
+	background-color: #D75404;
+  z-index: 1500;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  top: -50px;
+  right: 0;
+  -webkit-transition: top 0.3s 0s;
+  -moz-transition: top 0.3s 0s;
+  transition: top 0.3s 0s;
+}
+
+.cd-panel-header #panel-header-content {
+  font-weight: bold;
+  color: #89ba2c;
+  padding-left: 5%;
+}
+
+.is-visible .cd-panel-header {
+  top: 0;
+  -webkit-transition: top 0.3s 0.3s;
+  -moz-transition: top 0.3s 0.3s;
+  transition: top 0.3s 0.3s;
+}
+
+.cd-panel-container {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  background: #dbe2e9;
+  z-index: 1400; /* blue header is 1000 */
+
+  padding-top: 3em;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+
+  /* assuming from-right */
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.is-visible .cd-panel-container {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.cd-panel-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  z-index: 1600;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.is-visible .cd-panel-container {
+	transform: translate3d(0, 0, 0);
+	transition-delay: 0s;
+}
