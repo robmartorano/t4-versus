@@ -104,16 +104,22 @@ body {
   float: right;
   margin: 20px 30px 20px 20px; }
 
+[draggable=true] {
+  cursor: move; }
+
 #right-panel {
-  position: fixed;
-  display: inline-block;
+  position: absolute;
+  /*display: inline-block;
   float: left;
-  width: 15em;
-  background: #666666;
-  color: white;
   vertical-align: top;
   margin-top: 4em;
-  margin-right: 1em;
+  margin-right: 1em;*/
+  z-index: 10000;
+  width: 15em;
+  left: 1em;
+  top: 4em;
+  background: #666666;
+  color: white;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
   overflow-y: scroll; }
   #right-panel #right-panel-title {
