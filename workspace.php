@@ -30,7 +30,7 @@
             </div><!-- end gridster-->
         </div><!--end workspace-->
 
-        <div id="right-panel">
+        <div id="right-panel" draggable="true">
             <h3 id="right-panel-title">Editing Panel</h3>
             <ul>
                 <li id="add-components">
@@ -106,6 +106,7 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/gridster.js"></script>
+        <script src="scripts/drag.js"></script>
         <script src="scripts/capture_workspace.js"></script>
         <!-- <script src="script/print.jquery"></script> -->
 
