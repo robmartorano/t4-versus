@@ -14,7 +14,7 @@ try {
 $sqlq = "SELECT * FROM users WHERE email=:email AND password=:password";
 
 $login_email = $_POST['login-email']; 
-$login_password = $_POST['login-password']; 
+$login_password = password_verify($_POST['login-password'], PASSWORD_DEFAULT); 
 
 echo "email: ";
 echo $login_email;

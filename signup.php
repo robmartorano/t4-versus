@@ -18,7 +18,7 @@ $sqlq = "INSERT INTO users (email, first_name, last_name, password) VALUES (:ema
 $email = $_POST['sign-up-email'];
 $firstname = $_POST['first-name'];
 $lastname = $_POST['last-name'];
-$password = $_POST['sign-up-password'];
+$password = password_hash($_POST['sign-up-password'], PASSWORD_DEFAULT);
 
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
