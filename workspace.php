@@ -17,9 +17,9 @@
                 <ul id="menu-container">
                     <li class="menu-btn" id="hello-user">hello <?php if (isset($_SESSION['first_name'])) {echo $_SESSION['first_name'];} ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
-                    <li class="menu-btn" id="designs-menu-btn"><a href="" class="menu-link" id="nav-designs">Designs</a></li>
-                    <li class="menu-btn" id="account-menu-btn"><a href="account.php" class="menu-link" id="nav-account">Account</a></li>
-                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">Sign Out</a></li>
+                    <li class="menu-btn" id="designs-menu-btn"><a href="" class="menu-link" id="nav-designs">designs</a></li>
+                    <li class="menu-btn" id="account-menu-btn"><a href="account.php" class="menu-link" id="nav-account">account</a></li>
+                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">sign out</a></li>
                 </ul>
             </nav>
         </header>
@@ -101,7 +101,7 @@
             
         </div><!--end right-panel-->
 
-        <div class="cd-panel from-right">
+        <div class="cd-panel is-visible from-right">
             <header class="cd-panel-header">
                 <div id="panel-header-content">Designs</div>
                 <a href="#0" class="cd-panel-close">Close</a>

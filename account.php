@@ -13,8 +13,8 @@
             <nav>
                 <ul id="menu-container">
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
-                    <li class="menu-btn" id="account-menu-btn"><a href="workspace.php" class="menu-link" id="user-nav">Workspace</a></li>
-                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">Sign Out</a></li>
+                    <li class="menu-btn" id="account-menu-btn"><a href="workspace.php" class="menu-link" id="user-nav">workspace</a></li>
+                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">sign out</a></li>
                 </ul>
             </nav>
         </header>
