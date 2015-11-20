@@ -12,14 +12,13 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?php if (isset($_SESSION['first_name'])) {echo $_SESSION['first_name'];} ?></li>
                     <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
-                    <li class="menu-btn" id="home-menu-btn"><a href="" class="menu-link" id="nav-home">Designs</a></li>
-                    <li class="menu-btn" id="about-menu-btn"><a href="account.php" class="menu-link" id="nav-about">Account</a></li>
-                    <li class="menu-btn" id="photos-menu-btn"><a href="logout.php" class="menu-link" id="nav-photos">Sign Out</a></li>
+                    <li class="menu-btn" id="account-menu-btn"><a href="workspace.php" class="menu-link" id="user-nav">Workspace</a></li>
+                    <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">Sign Out</a></li>
                 </ul>
             </nav>
         </header>
+
     	<div class="account-module" id="user-profile">
     		<img src="images/placeholder-user.png" id="user-image"/>
     		<div id="user-info"> 
