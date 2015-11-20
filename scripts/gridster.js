@@ -15,7 +15,8 @@ $(function() {
       widget_margins: [10, 10],
       widget_base_dimensions: [53, 53],
       min_cols: 11,
-      min_rows: 22,
+      min_rows: 13,
+      max_rows: 14,
       resize: {
             enabled: true
       }
@@ -48,6 +49,13 @@ $(function() {
     gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxlisttitle" placeholder="title" id="' + count + 'boxlisttitle">' + html + '</li>', 3, numLines/2, 1, 1);
     $('#' + count + 'boxlisttitle').focus();
     count++;
+  });
+
+  $('#delete-selected').click(function() {
+    var all = $(".box-selected").map(function() {
+        console.log($(this).attr('id'));
+        gridster.remove_widget($(this));
+    }).get();
   });
 
   $('#save-button').click(function() {
