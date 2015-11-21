@@ -68,11 +68,14 @@ $(function() {
 	    }
 	});	
 
-	$.get('../just_logged_in.php', function(data) {
+	$.get('just_logged_in.php', function(data) {
+		console.log('checking if just logged in');
+		console.log(data);
 		if (data == "yes") {
-			$('.cd-panel').attr('class', 'is-visible');
+			console.log("yes, just logged in");
+			$('.cd-panel').addClass('is-visible');
 		}
-	})
+	}, "json");
 
 
 	//listen for changes to design

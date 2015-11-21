@@ -21,7 +21,7 @@ $firstname = $_POST['first-name'];
 $firstname = mysql_real_escape_string(strip_tags($firstname));
 $lastname = $_POST['last-name'];
 $lastname = mysql_real_escape_string(strip_tags($lastname));
-$password = $_POST['sign-up-password']
+$password = $_POST['sign-up-password'];
 $password = mysql_real_escape_string(strip_tags($password));
 $password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -37,7 +37,7 @@ $_SESSION['email'] = $email;
 $_SESSION['first_name'] = $firstname;
 $_SESSION['last_name'] = $lastname;
 $_SESSION['user_id'] = $db->lastInsertId();
-$_SESSION['just_logged_in'] = "yes";
+$_SESSION['just_logged_in'] = "yes"; 
 
 header('Location: workspace.php');
 ?>

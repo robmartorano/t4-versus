@@ -140,7 +140,7 @@ $(function() {
 
 
   	$('#add-month').click(function() {
-  		$.get("../templates/month.html", function(data) {
+  		$.get("templates/month.html", function(data) {
   			$('#workspace').append(data);
   			$('#workspace').find('.month').attr('id', count + 'testgridbox');
   			$('#' + count + 'testgridbox').resizable();
@@ -160,7 +160,7 @@ $(function() {
   	});
 
   	$('#add-week').click(function() {
-  		$.get("../templates/week.html", function(data) {
+  		$.get("templates/week.html", function(data) {
   			$('#workspace').append(data);
   		});
   		$('#workspace').find('.week').attr('id', count + 'testgridbox');
