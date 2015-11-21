@@ -225,7 +225,7 @@ body {
           border: none;
           height: 2em;
           margin: .25em;
-          -webkit-border-radius: 0px; }
+          outline-width: 1px; }
 
 @media print {
   #right-panel, header {

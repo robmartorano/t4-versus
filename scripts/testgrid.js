@@ -143,6 +143,26 @@ $(function() {
 
 
   	$('#add-month').click(function() {
+  		$.get("../templates/month.html", function(data) {
+  			$('#workspace').append(data);
+  		});
+
+  		$('.delete-gridbox').click(function() {
+	 		console.log('delete gridbox');
+	 		$(this).parent().remove();
+	 	});
+
+  	});
+
+  	$('#add-week').click(function() {
+  		$.get("../templates/week.html", function(data) {
+  			$('#workspace').append(data);
+  		});
+
+  		$('.delete-gridbox').click(function() {
+	 		console.log('delete gridbox');
+	 		$(this).parent().remove();
+	 	});
 
   	});
 

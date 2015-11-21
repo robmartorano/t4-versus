@@ -4,8 +4,10 @@
     position: absolute;
     left: 0;
     top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
-    width: 150px;
+    width: auto;
+    max-width: 100%;
     height: auto;
+    max-height: 100%;
 }
 
 .delete-gridbox {
@@ -67,4 +69,19 @@
 
 .box-selected {
     border-color: #99CCFF;
+}
+
+.month-table {
+	width: 100%;
+	border: 1px solid #E5E5E5;
+}
+
+.month-table tr {
+	height: 5em;
+	border: 1px solid #E5E5E5;
+}
+
+.week-table {
+	width: 100%;
+	border: 1px solid #E5E5E5;
 }
