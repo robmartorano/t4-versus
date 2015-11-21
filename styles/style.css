@@ -57,7 +57,8 @@ body {
   margin-right: 1em;
   margin-top: 4em;
   margin-bottom: 2em;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+  position: relative; }
 
 /* panel accordion transitions */
 .no-select, #right-panel ul li label.panel-section-title {

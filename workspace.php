@@ -4,9 +4,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>gylt</title>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
+        <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">-->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+        <link rel="stylesheet" href="styles/testgrid.css" />
         <link rel="stylesheet" href="styles/style.css" />
-        <link rel="stylesheet" href="styles/gridster.css" />
+        <!--<link rel="stylesheet" href="styles/gridster.css" />-->
         <link rel="stylesheet" href="styles/slidepanel.css" />
 
     </head>
@@ -25,10 +27,7 @@
         </header>
 
         <div id="workspace">
-            <div class="gridster">
-                <ul id="grid-list">
-                </ul>
-            </div><!-- end gridster-->
+
         </div><!--end workspace-->
 
         <div id="right-panel" draggable="true">
@@ -119,14 +118,18 @@
         </div> <!-- end cd-panel -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
         <script src="scripts/jscolor-2.0.4/jscolor.min.js"></script>
+        
 
         <script src="scripts/app.js"></script>
-        <script src="scripts/gridster.js"></script>
-        <script src="scripts/drag.js"></script>
+        <!--<script src="scripts/gridster.js"></script>-->
+        <!--<script src="scripts/drag.js"></script>-->
         <script src="scripts/capture_workspace.js"></script>
+        <script src="scripts/testgrid.js"></script>
+
         <!-- <script src="script/print.jquery"></script> -->
 
     </body>

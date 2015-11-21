@@ -1,0 +1,9 @@
+.testgridbox {
+    border: 1px black solid;
+    z-index: 150;
+    position: absolute;
+    left: 0;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+    width: 150px;
+    height: 150px;
+}

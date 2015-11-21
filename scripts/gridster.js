@@ -51,6 +51,10 @@ $(function() {
     count++;
   });
 
+  $('#add-month').click(function() {
+    gridster.add_widget('<li class="box" id="' + count + 'box"><input class="boxlisttitle" placeholder="title" id="' + count + 'boxlisttitle">')
+  })
+
   $('#delete-selected').click(function() {
     var all = $(".box-selected").map(function() {
         console.log($(this).attr('id'));
