@@ -1,14 +1,3 @@
-@media print {
-  #right-panel, header {
-    display: none; }
-
-  @page {
-    padding: 0;
-    margin: 0; }
-  #workspace {
-    display: block;
-    margin: 0;
-    box-shadow: none; } }
 body {
   margin: 0;
   font-family: Avenir, sans-serif;
@@ -196,22 +185,30 @@ body {
         font-size: .75em; }
         #right-panel ul li .panel-section button, #right-panel ul li .panel-section .save-preview-print-button {
           width: auto;
-          height: 2em;
-          border: 0px;
+          height: 2.5em;
+          border: 1px solid #a54003;
           border-radius: .25em;
           background-color: #D75404;
+          display: block;
+          margin: 1em 1em;
           color: white;
           padding: 0px 10px;
-          margin: 0 1em;
-          transition: all .4s; }
-        #right-panel ul li .panel-section button:hover {
-          background-color: #a54003; }
+          transition: all .25s; }
+        #right-panel ul li .panel-section button:hover, #right-panel ul li .panel-section button:active {
+          background-color: #a54003;
+          border: 1px solid #a54003; }
         #right-panel ul li .panel-section button:active {
           background-color: #8c3703; }
         #right-panel ul li .panel-section .add-schedule-button {
           display: block;
           margin: 1em 0;
           width: 50%; }
+        #right-panel ul li .panel-section #delete-selected {
+          background-color: white;
+          color: #8c3703;
+          border: 1px solid white; }
+        #right-panel ul li .panel-section #delete-selected:hover, #right-panel ul li .panel-section #delete-selected:active {
+          color: #D75404; }
         #right-panel ul li .panel-section .add-item h5 {
           margin-top: 1em;
           margin-bottom: 0; }
@@ -222,5 +219,17 @@ body {
           padding: 5px; }
         #right-panel ul li .panel-section .design-attributes {
           padding-top: 1em; }
+
+@media print {
+  #right-panel, header {
+    display: none; }
+
+  @page {
+    padding: 0;
+    margin: 0; }
+  #workspace {
+    display: block;
+    margin: 0;
+    box-shadow: none; } }
 
 /*# sourceMappingURL=style.css.map */

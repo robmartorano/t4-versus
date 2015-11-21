@@ -11,23 +11,6 @@ $mid-orange: #a54003;
 $dark-orange: #8c3703;
 $red: rgba(255,104,115,1);
 
-@media print {
-    #right-panel, header {
-        display: none;
-    }
-
-    @page { 
-        padding: 0;
-        margin: 0;
-    }
-
-    #workspace {
-        display: block;
-        margin:0;
-        box-shadow:none;
-    }
-}
-
 body {
     margin: 0;
     font-family: Avenir, sans-serif;
@@ -257,18 +240,20 @@ body {
 
                 button, .save-preview-print-button {
                     width: auto;
-                    height: 2em;
-                    border: 0px;
+                    height: 2.5em;
+                    border: 1px solid $mid-orange;
                     border-radius: .25em;
                     background-color: $orange;
+                    display: block;
+                    margin: 1em 1em;
                     color: white;
                     padding: 0px 10px;
-                    margin: 0 1em;
-                    transition: all .4s;
+                    transition: all .25s;
                 }
 
-                button:hover  {
+                button:hover, button:active {
                     background-color: $mid-orange;
+                    border: 1px solid $mid-orange;
                 }
 
                 button:active {
@@ -279,6 +264,16 @@ body {
                     display: block;
                     margin: 1em 0;
                     width: 50%;
+                }
+
+                #delete-selected {
+                    background-color: white;
+                    color: $dark-orange;
+                    border: 1px solid white;
+                }
+
+                #delete-selected:hover, #delete-selected:active {
+                    color: $orange;
                 }
 
                 .add-item {
@@ -302,3 +297,19 @@ body {
   }
 }
 
+@media print {
+    #right-panel, header {
+        display: none;
+    }
+
+    @page { 
+        padding: 0;
+        margin: 0;
+    }
+
+    #workspace {
+        display: block;
+        margin:0;
+        box-shadow:none;
+    }
+}

@@ -38,15 +38,11 @@
                     <label class="panel-section-title" for="add-components-checkbox"><i></i>Add Components</label>
                     <div class="panel-section">
                         <button class="add-schedule-button" id="add-rectangle">Add Blank Box</button>
-                        <div class="add-item">
-                            <h4>List Box</h4>
-                            <input type="text" id="list-length"/> &#35; lines
-                            <button id="add-list">Add List Box</button>
-                        </div>
+                        <button class="add-schedule-button" id="add-list">Add List Box</button>
                         <button class="add-schedule-button" id="add-month">Add Month</button>
                         <button class="add-schedule-button" id="add-week">Add Week</button>
                         <button class="add-schedule-button" id="add-day">Add Day</button>
-                        <button class="add-schedule-button" id="delete-selected">Delete Selected <span class="ui-icon ui-icon-trash"></span></button>
+                        <button class="add-schedule-button" id="delete-selected">Delete Selected</button>
                     </div><!--end panel-section-->
                 </li><!--end add-components-->
 
