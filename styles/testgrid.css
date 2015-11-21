@@ -8,8 +8,20 @@
     height: auto;
 }
 
+.delete-gridbox {
+	position: absolute;
+	right: 6px;
+	top: 0;
+	color: #E5E5E5;
+
+}
+
+.delete-gridbox:hover {
+	color: #666666;
+}
+
 .boxtitle, .boxlisttitle {
-    width: calc(100% - 6px);
+    width: calc(100% - 18px);
     background-color: transparent !important;
     border: none;
     outline: none;

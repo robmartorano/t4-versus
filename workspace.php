@@ -42,7 +42,6 @@
                         <button class="add-schedule-button" id="add-month">Add Month</button>
                         <button class="add-schedule-button" id="add-week">Add Week</button>
                         <button class="add-schedule-button" id="add-day">Add Day</button>
-                        <button class="add-schedule-button" id="delete-selected">Delete Selected</button>
                     </div><!--end panel-section-->
                 </li><!--end add-components-->
 

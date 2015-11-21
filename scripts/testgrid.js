@@ -78,9 +78,15 @@ $(function() {
 
 	$('#add-rectangle').click(function() {
 		$('#workspace').append('<div class="testgridbox ui-widget-content" id="' + count + 'testgridbox" draggable="true">'
+			+ '<span class="delete-gridbox">x</span>'
 			+ '<input class="boxtitle" id="' + count + 'boxtitle" placeholder="title">'
 			+ '<textarea class="boxtext" type="text" id="'+ count + 'boxtext"></textarea></div>');
 		$('#' + count + 'testgridbox').resizable();
+
+		$('.delete-gridbox').click(function() {
+	 		console.log('delete gridbox');
+	 		$(this).parent().remove();
+	 	});
 
 		var dm = document.getElementById(count + 'testgridbox'); 
 		dm.addEventListener('dragstart',drag_start,false); 
@@ -92,17 +98,8 @@ $(function() {
 
 
 	$('#add-list').click(function() {
-		/*
-    	var numLines = $('#list-length').val();
-    	var listhtml = '<ul id="' + count + 'boxlist">';
-    	var boxlisttextcount = 0;
-    	for (var i = 0; i < numLines; i++) {
-    		listhtml +='<li class="boxlist-li"><input class="boxlist-input" id="' + boxlisttextcount + 'boxlisttext"></li>';
-    		boxlisttextcount++;
-    	}
-    	listhtml += '</ul>';
-		*/
     	$('#workspace').append('<div class="testgridbox ui-widget-content" id="' + count + 'testgridbox" draggable="true">'
+    		+ '<span class="delete-gridbox">x</span>'
 			+ '<input class="boxlisttitle" id="' + count + 'boxlisttitle" placeholder="title">'
 			+ '<ul id="' + count + 'boxlist">'
 			+ '<li class="boxlist-li"><input class="boxlist-input"></li>'
@@ -132,6 +129,11 @@ $(function() {
 	  		}
 	  	});
 
+	  	$('.delete-gridbox').click(function() {
+	 		console.log('delete gridbox');
+	 		$(this).parent().remove();
+	 	});
+
     	var dm = document.getElementById(count + 'testgridbox'); 
 		dm.addEventListener('dragstart',drag_start,false); 
 
@@ -143,10 +145,6 @@ $(function() {
   	$('#add-month').click(function() {
 
   	});
-
- 	$('#delete-selected').click(function() {
-  		$( ".box-selected" ).remove();
- 	});
 
 	$('#save-button').click(function() {
 
