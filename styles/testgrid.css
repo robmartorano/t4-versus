@@ -1,9 +1,58 @@
 .testgridbox {
-    border: 1px black solid;
+    border: 2px #E5E5E5 solid; /* light gray */
     z-index: 150;
     position: absolute;
     left: 0;
     top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
     width: 150px;
-    height: 150px;
+    height: auto;
+}
+
+.boxtitle, .boxlisttitle {
+    width: calc(100% - 6px);
+    background-color: transparent !important;
+    border: none;
+    outline: none;
+
+    margin: 3px;
+
+    font-size: 1em;
+}
+
+.boxtitle:focus, .boxlisttitle:focus {
+    border-bottom: 1px #99CCFF solid;
+}
+
+.boxtext {
+    height: calc(100% - 32px);
+    width: calc(100% - 6px);
+    resize: none;
+    border: none;
+    background-color: transparent !important;
+    outline-width: 1px;
+
+    margin: 3px;
+
+    font-family: inherit;
+    font-size: 1em;  
+}
+
+.boxlist-li {
+    background-color: transparent !important;
+}
+
+.boxlist-input {
+	border: none;
+    background-color: transparent !important;
+    width: 100%;
+    font: inherit;
+    outline: none;
+}
+
+.boxlist-input:focus {
+	border-bottom: 1px #99CCFF solid;
+}
+
+.box-selected {
+    border-color: #99CCFF;
 }

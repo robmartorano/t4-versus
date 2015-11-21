@@ -162,11 +162,6 @@ body {
 
 #right-panel {
     position: absolute;
-    /*display: inline-block;
-    float: left;
-    vertical-align: top;
-    margin-top: 4em;
-    margin-right: 1em;*/
     z-index: 900;
     width: 15em;
     left: 1em;
@@ -283,6 +278,7 @@ body {
                 .add-schedule-button {
                     display: block;
                     margin: 1em 0;
+                    width: 50%;
                 }
 
                 .add-item {

@@ -37,22 +37,16 @@
                     <input type="checkbox" id="add-components-checkbox" checked>
                     <label class="panel-section-title" for="add-components-checkbox"><i></i>Add Components</label>
                     <div class="panel-section">
-                        <div class="add-item">
-                            <h4>Blank Box</h4>
-                            <input type="text" id="dimension-x-box"/>
-                            x
-                            <input type="text" id="dimension-y-box"/>
-                            <button id="add-rectangle">Add Box</button>
-                        </div>
+                        <button class="add-schedule-button" id="add-rectangle">Add Blank Box</button>
                         <div class="add-item">
                             <h4>List Box</h4>
                             <input type="text" id="list-length"/> &#35; lines
-                            <button id="add-list">Add List</button>
+                            <button id="add-list">Add List Box</button>
                         </div>
                         <button class="add-schedule-button" id="add-month">Add Month</button>
                         <button class="add-schedule-button" id="add-week">Add Week</button>
                         <button class="add-schedule-button" id="add-day">Add Day</button>
-                        <button class="add-schedule-button" id="delete-selected">Delete Selected</button>
+                        <button class="add-schedule-button" id="delete-selected">Delete Selected <span class="ui-icon ui-icon-trash"></span></button>
                     </div><!--end panel-section-->
                 </li><!--end add-components-->
 
@@ -100,7 +94,7 @@
             
         </div><!--end right-panel-->
 
-        <div class="cd-panel is-visible from-right">
+        <div class="cd-panel from-right">
             <header class="cd-panel-header">
                 <div id="panel-header-content">Designs</div>
                 <a href="#0" class="cd-panel-close">Close</a>

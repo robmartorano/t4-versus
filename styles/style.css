@@ -118,11 +118,6 @@ body {
 
 #right-panel {
   position: absolute;
-  /*display: inline-block;
-  float: left;
-  vertical-align: top;
-  margin-top: 4em;
-  margin-right: 1em;*/
   z-index: 900;
   width: 15em;
   left: 1em;
@@ -215,7 +210,8 @@ body {
           background-color: #8c3703; }
         #right-panel ul li .panel-section .add-schedule-button {
           display: block;
-          margin: 1em 0; }
+          margin: 1em 0;
+          width: 50%; }
         #right-panel ul li .panel-section .add-item h5 {
           margin-top: 1em;
           margin-bottom: 0; }
