@@ -90,9 +90,7 @@ $(function() {
 
 		var dm = document.getElementById(count + 'testgridbox'); 
 		dm.addEventListener('dragstart',drag_start,false); 
-
 		$('#' + count + 'boxtitle').focus();
-
 		count++;
 	});
 
@@ -136,7 +134,6 @@ $(function() {
 
     	var dm = document.getElementById(count + 'testgridbox'); 
 		dm.addEventListener('dragstart',drag_start,false); 
-
     	$('#' + count + 'boxlisttitle').focus();
     	count++;
   	});
@@ -145,25 +142,40 @@ $(function() {
   	$('#add-month').click(function() {
   		$.get("../templates/month.html", function(data) {
   			$('#workspace').append(data);
+  			$('#workspace').find('.month').attr('id', count + 'testgridbox');
+  			$('#' + count + 'testgridbox').resizable();
+
+	  		$('.delete-gridbox').click(function() {
+		 		console.log('delete gridbox');
+		 		$(this).parent().remove();
+		 	});
+
+		 	var dm = document.getElementById(count + 'testgridbox'); 
+			dm.addEventListener('dragstart',drag_start,false); 
+			count++;
+			$('#add-month').prop('disabled', true);
   		});
 
-  		$('.delete-gridbox').click(function() {
-	 		console.log('delete gridbox');
-	 		$(this).parent().remove();
-	 	});
-
+  		
   	});
 
   	$('#add-week').click(function() {
   		$.get("../templates/week.html", function(data) {
   			$('#workspace').append(data);
   		});
+  		$('#workspace').find('.week').attr('id', count + 'testgridbox');
+
+  		$('#' + count + 'testgridbox').resizable();
 
   		$('.delete-gridbox').click(function() {
 	 		console.log('delete gridbox');
 	 		$(this).parent().remove();
 	 	});
 
+	 	var dm = document.getElementById(count + 'testgridbox'); 
+		dm.addEventListener('dragstart',drag_start,false); 
+		count++;
+		$('#add-week').prop('disabled', true);
   	});
 
 	$('#save-button').click(function() {

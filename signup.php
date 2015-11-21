@@ -37,7 +37,7 @@ $_SESSION['email'] = $email;
 $_SESSION['first_name'] = $firstname;
 $_SESSION['last_name'] = $lastname;
 $_SESSION['user_id'] = $db->lastInsertId();
-
+$_SESSION['just_logged_in'] = "yes";
 
 header('Location: workspace.php');
 ?>

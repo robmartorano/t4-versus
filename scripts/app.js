@@ -68,6 +68,12 @@ $(function() {
 	    }
 	});	
 
+	$.get('../just_logged_in.php', function(data) {
+		if (data == "yes") {
+			$('.cd-panel').attr('class', 'is-visible');
+		}
+	})
+
 
 	//listen for changes to design
 	$('#background-color').change(function() {

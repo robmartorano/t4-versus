@@ -41,6 +41,8 @@ if($rows>=1){
 	$_SESSION['user_id'] = $result['user_id'];
 	$_SESSION['first_name'] = $result['first_name'];
 	$_SESSION['last_name'] = $result['last_name'];
+	$_SESSION['just_logged_in'] = "yes";
+
 	header("location:workspace.php");
 }
 else {

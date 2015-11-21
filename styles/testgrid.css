@@ -32,7 +32,6 @@
 
     font-size: 1em;
 }
-
 .boxtitle:focus, .boxlisttitle:focus {
     border-bottom: 1px #99CCFF solid;
 }
@@ -62,7 +61,6 @@
     font: inherit;
     outline: none;
 }
-
 .boxlist-input:focus {
 	border-bottom: 1px #99CCFF solid;
 }
@@ -71,17 +69,49 @@
     border-color: #99CCFF;
 }
 
+.month {
+	width: 100%;
+}
+
+.week {
+	width: 100%;
+}
+
 .month-table {
 	width: 100%;
 	border: 1px solid #E5E5E5;
+	table-layout: fixed;
+	border-collapse: collapse;
 }
 
 .month-table tr {
 	height: 5em;
+}
+
+th, td {
 	border: 1px solid #E5E5E5;
+	border-collapse: collapse;
+}
+
+th input {
+	width: 100%;
+	height: 2em;
+	border: none;
+    background-color: transparent !important;
+    font: inherit;
+    outline: none;
+}
+th input:focus {
+	border-bottom: 1px #99CCFF solid;
 }
 
 .week-table {
 	width: 100%;
 	border: 1px solid #E5E5E5;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+.ui-widget-content {
+	background: transparent;
 }
