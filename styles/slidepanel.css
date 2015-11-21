@@ -21,7 +21,7 @@
 
 .cd-panel-header {
   position: fixed;
-  width: 50%;
+  width: 30%;
   height: 3em;
   line-height: 3em;
   color: white;
@@ -37,7 +37,7 @@
 
 .cd-panel-header #panel-header-content {
   font-weight: bold;
-  color: #89ba2c;
+  color: #99CCFF;
   padding-left: 5%;
 }
 
@@ -50,11 +50,12 @@
 
 .cd-panel-container {
   position: fixed;
-  width: 50%;
+  width: 30%;
   height: 100%;
   top: 0;
   background: #dbe2e9;
   z-index: 1400; /* blue header is 1000 */
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
 
   padding-top: 3em;
   -webkit-transition-property: -webkit-transform;

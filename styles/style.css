@@ -219,6 +219,13 @@ body {
           padding: 5px; }
         #right-panel ul li .panel-section .design-attributes {
           padding-top: 1em; }
+        #right-panel ul li .panel-section .design-attributes select, #right-panel ul li .panel-section .design-attributes input {
+          width: 50%;
+          display: block;
+          border: none;
+          height: 2em;
+          margin: .25em;
+          -webkit-border-radius: 0px; }
 
 @media print {
   #right-panel, header {
