@@ -96,7 +96,7 @@
             <div class="cd-panel-container">
                 <div class="cd-panel-content">
                     <ul id="panel-designs-list">
-                        <li>Design 1</li>
+                        <li id="design-one">Design 1</li> 
                         <li>Design 2</li>
                         <li>Design 3</li>
                     </ul>

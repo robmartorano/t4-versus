@@ -204,6 +204,7 @@ $(function() {
 	  });
 
 	$('#design-one').click(function() {
+		console.log("getting file");
 		$.get('loadWorkspace.php', function(data) {
 			console.log("data: " + data);
 			$('#workspace').append(data.html);

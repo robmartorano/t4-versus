@@ -24,7 +24,8 @@ $result = $getready->fetch();
 $num_rows = count($result);
 
 if ($num_rows > 0) {
-	$file = file_get_contents("./user_designs/". $result['filename'] . ".json");
+	//$file = file_get_contents("./user_designs/". $result['filename'] . ".json");
+	$file = file_get_contents("./user_designs/da0e2875e80c1bc27e5143cbfa92f726.json");
 	if ($file == FALSE) {
 		echo "failed to find file"; 
 	}
