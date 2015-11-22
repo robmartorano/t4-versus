@@ -81,7 +81,9 @@ $(function() {
 			+ '<span class="delete-gridbox">x</span>'
 			+ '<input class="boxtitle" id="' + count + 'boxtitle" placeholder="title">'
 			+ '<textarea class="boxtext" type="text" id="'+ count + 'boxtext"></textarea></div>');
-		$('#' + count + 'testgridbox').resizable();
+		$('#' + count + 'testgridbox').resizable({
+  				handles: "se"
+  			});
 
 		$('.delete-gridbox').click(function() {
 	 		console.log('delete gridbox');
@@ -103,7 +105,9 @@ $(function() {
 			+ '<li class="boxlist-li"><input class="boxlist-input"></li>'
 			+ '</ul></div>');
 
-    	$('#' + count + 'testgridbox').resizable();
+    	$('#' + count + 'testgridbox').resizable({
+  				handles: "se"
+  			});
 
     	$('.boxlist-input').keyup(function(e) {
     		// ENTER key
@@ -143,7 +147,9 @@ $(function() {
   		$.get("templates/month.html", function(data) {
   			$('#workspace').append(data);
   			$('#workspace').find('.month').attr('id', count + 'testgridbox');
-  			$('#' + count + 'testgridbox').resizable();
+  			$('#' + count + 'testgridbox').resizable({
+  				handles: "se"
+  			});
 
 	  		$('.delete-gridbox').click(function() {
 		 		console.log('delete gridbox');
@@ -153,7 +159,6 @@ $(function() {
 		 	var dm = document.getElementById(count + 'testgridbox'); 
 			dm.addEventListener('dragstart',drag_start,false); 
 			count++;
-			$('#add-month').prop('disabled', true);
   		});
 
   		
@@ -162,20 +167,21 @@ $(function() {
   	$('#add-week').click(function() {
   		$.get("templates/week.html", function(data) {
   			$('#workspace').append(data);
+  			$('#workspace').find('.week').attr('id', count + 'testgridbox');
+  			$('#' + count + 'testgridbox').resizable({
+  				handles: "se"
+  			});
+
+	  		$('.delete-gridbox').click(function() {
+		 		console.log('delete gridbox');
+		 		$(this).parent().remove();
+		 	});
+
+		 	var dm = document.getElementById(count + 'testgridbox'); 
+			dm.addEventListener('dragstart',drag_start,false); 
+			count++;
   		});
-  		$('#workspace').find('.week').attr('id', count + 'testgridbox');
-
-  		$('#' + count + 'testgridbox').resizable();
-
-  		$('.delete-gridbox').click(function() {
-	 		console.log('delete gridbox');
-	 		$(this).parent().remove();
-	 	});
-
-	 	var dm = document.getElementById(count + 'testgridbox'); 
-		dm.addEventListener('dragstart',drag_start,false); 
-		count++;
-		$('#add-week').prop('disabled', true);
+  		
   	});
 
 	$('#save-button').click(function() {

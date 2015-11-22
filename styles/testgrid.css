@@ -79,6 +79,7 @@
 
 .month-table {
 	width: 100%;
+    height: 100%;
 	border: 1px solid #E5E5E5;
 	table-layout: fixed;
 	border-collapse: collapse;
@@ -107,9 +108,18 @@ th input:focus {
 
 .week-table {
 	width: 100%;
+    height: 100%;
 	border: 1px solid #E5E5E5;
 	table-layout: fixed;
 	border-collapse: collapse;
+}
+
+.week-table tr th {
+    height: auto;
+}
+
+.week-table tr td {
+    height: 10em;
 }
 
 .ui-widget-content {
