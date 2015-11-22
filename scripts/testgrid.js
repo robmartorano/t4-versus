@@ -185,7 +185,32 @@ $(function() {
   	});
 
 	$('#save-button').click(function() {
+	    var workspaceHTML = $('#workspace').html();
+	    var saveJSON = {
+	    	"html": workspaceHTML,
+	    	"count": count
+	    }
+	    $.ajax({
+	      type : "POST",
+	      url : "saveWorkspace.php",
+	      dataType : 'json', 
+	      data : {
+	          json : JSON.stringify(saveJSON)
+	      },
+	      success: function(data) {
+	        console.log(data);
+	      }
+	    });
+	  });
 
+	$('#design-one').click(function() {
+		$.get('loadWorkspace.php', function(data) {
+			console.log("data: " + data);
+			$('#workspace').append(data.html);
+			count = data.count; 
+		}).fail(function(jqXHR, textStatus, error) {
+			alert("Failed to load design because: " + error);
+		});
 	});
 
 });
