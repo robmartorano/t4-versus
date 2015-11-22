@@ -189,7 +189,7 @@ $(function() {
 	    var saveJSON = {
 	    	"html": workspaceHTML,
 	    	"count": count
-	    }
+	    };
 	    $.ajax({
 	      type : "POST",
 	      url : "saveWorkspace.php",
@@ -207,8 +207,10 @@ $(function() {
 		console.log("getting file");
 		$.get('loadWorkspace.php', function(data) {
 			console.log("data: " + data);
+			data = $.parseJSON(data);
 			$('#workspace').append(data.html);
 			count = data.count; 
+			$('.cd-panel').removeClass('is-visible');
 		}).fail(function(jqXHR, textStatus, error) {
 			alert("Failed to load design because: " + error);
 		});

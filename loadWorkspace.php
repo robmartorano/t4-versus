@@ -24,13 +24,16 @@ $result = $getready->fetch();
 $num_rows = count($result);
 
 if ($num_rows > 0) {
-	//$file = file_get_contents("./user_designs/". $result['filename'] . ".json");
-	$file = file_get_contents("./user_designs/da0e2875e80c1bc27e5143cbfa92f726.json");
-	if ($file == FALSE) {
-		echo "failed to find file"; 
+	$filename = "./user_designs/da0e2875e80c1bc27e5143cbfa92f726.json";
+
+	if (file_exists($filename)) {
+		//echo "yes, file exists\n";
+		$file_contents = file_get_contents($filename);
+		//$json_contents = json_decode($file_contents);
+		echo $file_contents;
 	}
 	else {
-		echo $file; 
+		echo "the design file does not exist on our server";
 	}
 }
 else {
