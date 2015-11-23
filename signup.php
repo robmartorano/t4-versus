@@ -13,7 +13,6 @@ try {
 } catch(PDOException $e) {
     die('Could not connect to the database:<br/>' . $e);
 }
-$sqlq = "INSERT INTO users (email, first_name, last_name, password) VALUES (:email, :firstname, :lastname, :password)";
 
 $email = $_POST['sign-up-email'];
 $email = mysql_real_escape_string(strip_tags($email));
@@ -25,19 +24,48 @@ $password = $_POST['sign-up-password'];
 $password = mysql_real_escape_string(strip_tags($password));
 $password = password_hash($password, PASSWORD_DEFAULT);
 
-$getready = $db->prepare($sqlq);
-$getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
+#checking for empty fields
+ if (empty($email) || empty($firstname) || empty($lastname) || empty($password)) {
+    echo "Please fill out every form!";
+ }
 
-echo "You have successfully signed up. An email was sent to ";
-echo $email;
-echo ". Welcome to gylt! <a href='workspace.php'>Start designing here</a>";
+elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+	$duplicheck = "SELECT * FROM users WHERE email=:email";
+	$resource = mysql_query($duplicheck);
+	#$array = $resource->fetch_array(MYSQLI_ASSOC);#
+	$numrows = mysqli_num_rows($resource);
+	if ($numrows == 0) {
+
+		$sqlq = "INSERT INTO users (email, first_name, last_name, password) VALUES (:email, :firstname, :lastname, :password)";
 
 
-$_SESSION['email'] = $email;
-$_SESSION['first_name'] = $firstname;
-$_SESSION['last_name'] = $lastname;
-$_SESSION['user_id'] = $db->lastInsertId();
-$_SESSION['just_logged_in'] = "yes"; 
+		$getready = $db->prepare($sqlq);
+		$getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
 
-header('Location: workspace.php');
+		echo "You have successfully signed up. An email was sent to ";
+		echo $email;
+		echo ". Welcome to gylt! <a href='workspace.php'>Start designing here</a>";
+
+
+		$_SESSION['email'] = $email;
+		$_SESSION['first_name'] = $firstname;
+		$_SESSION['last_name'] = $lastname;
+		$_SESSION['user_id'] = $db->lastInsertId();
+		$_SESSION['just_logged_in'] = "yes"; 
+
+		header('Location: workspace.php');
+	}
+	else {
+		echo "Email has already been registered.";
+	}
+}
+
+else {
+	echo "Invalid email format. Please try again."; 
+
+}
 ?>
+
+
+
