@@ -54,8 +54,6 @@ $(function() {
 	var currentBorderWidth = "2px";
 
 	$('#workspace').on('click', 'div', function() {
-		console.log($(this).attr('id'));
-
 		$('#' + $(this).attr('id')).toggleClass('box-selected');
 
 		if ($('#' + $(this).attr('id')).hasClass('box-selected')) {
