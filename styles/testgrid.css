@@ -16,10 +16,9 @@
 	top: 0;
 	color: #E5E5E5;
 
-}
-
-.delete-gridbox:hover {
+} .delete-gridbox:hover {
 	color: #666666;
+    cursor: pointer;
 }
 
 .boxtitle, .boxlisttitle {
@@ -31,8 +30,7 @@
     margin: 3px;
 
     font-size: 1em;
-}
-.boxtitle:focus, .boxlisttitle:focus {
+} .boxtitle:focus, .boxlisttitle:focus {
     border-bottom: 1px #99CCFF solid;
 }
 
@@ -60,8 +58,7 @@
     width: 100%;
     font: inherit;
     outline: none;
-}
-.boxlist-input:focus {
+} .boxlist-input:focus {
 	border-bottom: 1px #99CCFF solid;
 }
 
@@ -70,56 +67,51 @@
 }
 
 .month {
-	width: 100%;
+	width: calc(100%-2px);
+    min-height: 14em;
+    min-width: 24em;
 }
 
 .week {
-	width: 100%;
+	width: calc(100%-4px);
+    min-height: 12em;
+    min-width: 24em;
 }
 
 .month-table {
 	width: 100%;
     height: 100%;
 	border: 1px solid #E5E5E5;
-	table-layout: fixed;
 	border-collapse: collapse;
 }
 
-.month-table tr {
-	height: 5em;
+.week-table {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E5E5E5;
+    border-collapse: collapse;
+}
+
+th input {
+    width: 100%;
+    height: 2em;
+    border: none;
+    background-color: transparent !important;
+    font: inherit;
+    outline: none;
+} th input:focus {
+    border-bottom: 1px #99CCFF solid;
 }
 
 th, td {
 	border: 1px solid #E5E5E5;
 	border-collapse: collapse;
+    min-width: 3em;
+    min-height: 2em;
 }
 
-th input {
-	width: 100%;
-	height: 2em;
-	border: none;
-    background-color: transparent !important;
-    font: inherit;
-    outline: none;
-}
-th input:focus {
-	border-bottom: 1px #99CCFF solid;
-}
-
-.week-table {
-	width: 100%;
-    height: 100%;
-	border: 1px solid #E5E5E5;
-	table-layout: fixed;
-	border-collapse: collapse;
-}
-
-.week-table tr th {
-    height: auto;
-}
-
-.week-table tr td {
-    height: 10em;
+.month-table tr th, .week-table tr th {
+    height: 2em;
 }
 
 .ui-widget-content {

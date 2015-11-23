@@ -11,6 +11,7 @@ $(function() {
 	function drag_start(event) {
 		currentDrag = '#' + $(this).attr('id');
 	    var style = window.getComputedStyle(event.target, null);
+	    event.originalEvent.dataTransfer.effectAllowed = "move";
 	    event.originalEvent.dataTransfer.setData("text/plain",
 	    (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"),10) - event.clientY));
 	}
@@ -75,7 +76,7 @@ $(function() {
   		if (e.which == 13) {
   			$(this).parent().parent().append('<li class="boxlist-li"><input class="boxlist-input"></li>');
   			// TO DO: adding listener here occasionally causes double bullet add
-  			$('.boxlist-input').keyup(addListboxKeyListeners);
+  			//$('.boxlist-input').keyup(addListboxKeyListeners);
   		}
   		// DELETE or BACKSPACE key
   		else if (e.which == 8 || e.which == 46) {
@@ -94,6 +95,10 @@ $(function() {
   		}
 	}
 
+	$('#workspace').on('click', '.delete-gridbox', deleteGridbox);
+	$('#workspace').on('dragstart', '.testgridbox', drag_start);
+	$('#workspace').on('keyup', '.boxlist-input', addListboxKeyListeners);
+
 	var count = 0;
 
 	$('#add-rectangle').click(function() {
@@ -105,8 +110,8 @@ $(function() {
 		$('#' + count + 'testgridbox').resizable({
   				handles: "se"
 		});
-		$('.delete-gridbox').click(deleteGridbox);
-		$('#' + count + 'testgridbox').on('dragstart', drag_start);
+		//$('.delete-gridbox').click(deleteGridbox);
+		//$('#' + count + 'testgridbox').on('dragstart', drag_start);
 		$('#' + count + 'boxtitle').focus();
 		count++;
 	});
@@ -123,9 +128,9 @@ $(function() {
     	$('#' + count + 'testgridbox').resizable({
   				handles: "se"
   		});
-    	$('.boxlist-input').keyup(addListboxKeyListeners);
-	  	$('.delete-gridbox').click(deleteGridbox);
-    	$('#' + count + 'testgridbox').on('dragstart', drag_start);
+    	//$('.boxlist-input').keyup(addListboxKeyListeners);
+	  	//$('.delete-gridbox').click(deleteGridbox);
+    	//$('#' + count + 'testgridbox').on('dragstart', drag_start);
     	$('#' + count + 'boxlisttitle').focus();
     	count++;
   	});
@@ -139,8 +144,8 @@ $(function() {
   			$('#' + count + 'testgridbox').resizable({
   				handles: "se"
   			});
-	  		$('.delete-gridbox').click(deleteGridbox);
-		 	$('#' + count + 'testgridbox').on('dragstart', drag_start);
+	  		//$('.delete-gridbox').click(deleteGridbox);
+		 	//$('#' + count + 'testgridbox').on('dragstart', drag_start);
 			count++;
   		});
   	});
@@ -153,8 +158,8 @@ $(function() {
   			$('#' + count + 'testgridbox').resizable({
   				handles: "se"
   			});
-	  		$('.delete-gridbox').click(deleteGridbox);
-		 	$('#' + count + 'testgridbox').on('dragstart', drag_start);
+	  		//$('.delete-gridbox').click(deleteGridbox);
+		 	//$('#' + count + 'testgridbox').on('dragstart', drag_start);
 			count++;
   		});
   		
@@ -192,9 +197,9 @@ $(function() {
 				$('.testgridbox').resizable({
 	  				handles: "se"
 	  			});
-	  			$(this).on('dragstart', drag_start);
-	  			$('.boxlist-input').keyup(addListboxKeyListeners);
-	  			$('.delete-gridbox').click(deleteGridbox);
+	  			//$(this).on('dragstart', drag_start);
+	  			//$('.boxlist-input').keyup(addListboxKeyListeners);
+	  			//$('.delete-gridbox').click(deleteGridbox);
 			});
 
 		}).fail(function(jqXHR, textStatus, error) {
