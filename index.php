@@ -103,13 +103,19 @@
 
         <div id="welcome-center-container">
             <h1>gylt</h1>
-            <h4>get your life together.</h4>
+            <h4>get your life together</h4>
             <button class="bold-button" id="sign-up-button">sign up</button>
             <button class="bold-button" id="login-button">login</button>
             <form action="signup.php" method="post"  class="login-signup" id="sign-up-section">
                 <img src="images/facebook.png" class="facebook"/>
                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                 </fb:login-button>
+
+                <?php 
+                  if(isset($msg)){  // Check if $msg is not empty
+                  echo '<div class="statusmsg">'.$msg.'</div>'; // Display our message and wrap it with a div with the class "statusmsg".
+                  } 
+                ?>
                 <div id="status"></div>
                 <input placeholder="first name" name="first-name" id="first-name" autofocus required>
                 <input placeholder="last name" name="last-name" id="last-name" required>
