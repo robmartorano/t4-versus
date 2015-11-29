@@ -24,6 +24,8 @@
             </nav>
         </header>
 
+        <p id="saving-update"></p>
+
         <div id="workspace">
 
         </div><!--end workspace-->

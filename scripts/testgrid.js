@@ -7,6 +7,7 @@ $(function() {
 	var workspaceHeight = $('#workspace').height();
 	var workspaceWidth = $('#workspace').width();
 	var currentDrag;
+	var currentDesignName;
 
 	function drag_start(event) {
 		currentDrag = '#' + $(this).attr('id');
@@ -165,8 +166,22 @@ $(function() {
   		
   	});
 
-	$('#save-button').click(function() {
-	    var workspaceHTML = $('#workspace').html();
+  	function strcmp ( str1, str2 ) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Waldo Malqui Silva
+    // +      input by: Steve Hilder
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +    revised by: gorthaur
+    // *     example 1: strcmp( 'waldo', 'owald' );
+    // *     returns 1: 1
+    // *     example 2: strcmp( 'owald', 'waldo' );
+    // *     returns 2: -1
+
+    	return ( ( str1 == str2 ) ? 0 : ( ( str1 > str2 ) ? 1 : -1 ) );
+	}
+
+  	function save(){
+  		var workspaceHTML = $('#workspace').html();
 	    var saveJSON = {
 	    	"html": workspaceHTML,
 	    	"count": count
@@ -174,15 +189,78 @@ $(function() {
 	    $.ajax({
 	      type : "POST",
 	      url : "saveWorkspace.php",
-	      dataType : 'json', 
+	      dataType: 'json',
 	      data : {
-	          json : JSON.stringify(saveJSON)
+	          json : JSON.stringify(saveJSON),
+	          design_name: currentDesignName
 	      },
 	      success: function(data) {
 	        console.log(data);
 	      }
 	    });
-	  });
+  	}
+
+  	function checkDuplicateDesignName(wantedName) {
+  		$.ajax({
+  			type: "POST",
+  			url: "checkduplicatedesign.php",
+  			data: {
+  				"wanted_name": wantedName
+  			},
+  			success: function(data) {
+  				//data = $.parseJSON(data);
+  				console.log("check design data: " + data);
+  				return data;
+  			},
+  			error: function(textStatus, errorThrown) {
+  				console.log("failed to check design data: " + textStatus + " " + errorThrown);
+  				return "already exists";
+  			}
+
+  		});
+  	}
+
+	$('#save-button').click(function() {
+		/* save as */
+		if (currentDesignName == null) {
+	    	var input = prompt("Please enter a name for your new design:");
+	    	while (input == null || input == "") {
+	    		input = prompt("You must give your design a name:");
+	    	};
+	    	while (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
+	    		input = prompt("Sorry, you already have a design by that name. Please enter another name:");
+	    		checkDuplicateDesignName(input);
+	    	};
+	  		var workspaceHTML = $('#workspace').html();
+	  		var saveJSON = {
+			    "html": workspaceHTML,
+			    "count": count,
+			};
+	  		$.ajax({
+		     	type : "POST",
+		      	url : "saveWorkspace.php",
+		      	dataType : 'json',
+		      	data : {
+		          	json : JSON.stringify(saveJSON),
+		          	design_name: input
+		     	 },
+		     	 success: function(data) {
+		      	  console.log(data);
+		      	  // TODO add design name to design list in side panel
+		      	}
+		    });
+
+    		currentDesignName = input;
+	  	}
+	  	/* save */
+	  	else {
+	  		save();
+	  	}
+	});
+
+	/*var autosaver = setInterval(function() 
+		{ save(); document.getElementById("demo").innerHTML =
+        		"Autosaved.";}, 5000);*/
 
 	$('#design-one').click(function() {
 		console.log("getting file");
