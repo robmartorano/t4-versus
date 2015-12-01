@@ -36,10 +36,14 @@ body {
   float: left; }
 
 #design-details-section {
-  margin-top: 4em;
-  margin-bottom: 1em; }
+  margin-left: 1em;
+  margin-top: 5em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  width: 51em;
+  text-align: center; }
 
-#design-details-section-item {
+.design-details-section-item {
   display: inline; }
 
 #current-design-name {
