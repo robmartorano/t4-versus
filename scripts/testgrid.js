@@ -165,34 +165,16 @@ $(function() {
   		});
   		
   	});
-	  
+	
+	/* to store a list of the user's designs */
 	var userDesignList = [];
-	
-	function updateDesignList() {
-		$( ".user-design-list-item" ).each(function( index ) {
-			userDesignList.push($(this).text());
-		});
-		console.log("user design list: " + userDesignList);
-	}
-	
-	updateDesignList();
-
-  	function strcmp ( str1, str2 ) {
-    // http://kevin.vanzonneveld.net
-    // +   original by: Waldo Malqui Silva
-    // +      input by: Steve Hilder
-    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-    // +    revised by: gorthaur
-    // *     example 1: strcmp( 'waldo', 'owald' );
-    // *     returns 1: 1
-    // *     example 2: strcmp( 'owald', 'waldo' );
-    // *     returns 2: -1
-
-    	return ( ( str1 == str2 ) ? 0 : ( ( str1 > str2 ) ? 1 : -1 ) );
-	}
+	$( ".user-design-list-item" ).each(function( index ) {
+		userDesignList.push($(this).text());
+	});
+	console.log("user design list: " + userDesignList);
 
   	function save(){
-		currentDesignName = $('#current-design-name').val(); // TODO remove later
+		currentDesignName = $('#current-design-name').val();
   		var workspaceHTML = $('#workspace').html();
 	    var saveJSON = {
 	    	"html": workspaceHTML,
@@ -219,71 +201,33 @@ $(function() {
 		  else {
 			  return "does not exist";
 		  }
-		  /*
-  		$.ajax({
-  			type: "POST",
-  			url: "checkduplicatedesign.php",
-  			data: {
-  				"wanted_name": wantedName
-  			},
-  			success: function(data) {
-  				//data = $.parseJSON(data);
-  				console.log("check design data: " + data);
-  				return data;
-  			},
-  			error: function(textStatus, errorThrown) {
-  				console.log("failed to check design data: " + textStatus + " " + errorThrown);
-  				return "already exists";
-  			}
-
-  		});
-		  */
   	}
 
 	$('#save-button').click(function() {
-		/* save as */
 		if (currentDesignName == null) {
-			
-	    	var input = prompt("Please enter a name for your new design:");
-	    	while (input == null || input == "") {
-	    		input = prompt("You must give your design a name:");
-	    	};
-	    	while (checkDuplicateDesignName(input) == "already exists") {
-	    		input = prompt("Sorry, you already have a design by that name. Please enter another name:");
-	    		checkDuplicateDesignName(input);
-	    	};
-	  		var workspaceHTML = $('#workspace').html();
-	  		var saveJSON = {
-			    "html": workspaceHTML,
-			    "count": count,
+			var input = alert("Please enter a name for your new design:");
+			if (input == null || input == "") {
+				input = alert("You must give your design a name:");
+				return;
 			};
-	  		$.ajax({
-		     	type : "POST",
-		      	url : "saveWorkspace.php",
-		      	dataType : 'json',
-		      	data : {
-		          	json : JSON.stringify(saveJSON),
-		          	design_name: input
-		     	 },
-		     	 success: function(data) {
-		      	  console.log(data);
-		      	  // TODO add design name to design list in side panel
-		      	}
-		    });
-
-    		currentDesignName = input;
-			
-	  	}
-	  	/* save */
-	  	else {
-	  		save();
-	  	}
+			if (checkDuplicateDesignName(input) == "already exists") {
+				input = alert("Sorry, you already have a design by that name. Please enter another name:");
+				return;
+			};
+			currentDesignName = input;
+		}
+		save();
 	});
 
-	/*var autosaver = setInterval(function() 
-		{ save(); document.getElementById("demo").innerHTML =
-        		"Autosaved.";}, 5000);*/
+	/* Autosave only runs if a design has been loaded into the page */
+	var autosaver = setInterval(function() {
+		if (currentDesignName != null) {
+			save();
+		}
+		$('#saving-update').text("autosaved");
+	}, 5000);
 
+	/* Load a design */
 	$('.user-design-list-item').click(function() {
 		var designToLoad = $(this).text();
 		console.log("getting file for: " + designToLoad);
@@ -301,6 +245,7 @@ $(function() {
 						$('saving-update').text(data);
 					}
 					else {
+						$('#current-design-name').val(designToLoad);
 						data = $.parseJSON(data);
 						$('#workspace').append(data.html);
 						count = data.count; 
