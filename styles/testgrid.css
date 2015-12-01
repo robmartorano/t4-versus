@@ -55,7 +55,7 @@
 .boxlist-input {
 	border: none;
     background-color: transparent !important;
-    width: 100%;
+    width: 95%;
     font: inherit;
     outline: none;
 } .boxlist-input:focus {
@@ -109,9 +109,16 @@ th, td {
     min-width: 3em;
     min-height: 2em;
 }
+.month-main-row {
+    height: 3em;
+}
 
 .month-table tr th, .week-table tr th {
     height: 2em;
+}
+
+.week-main-row {
+    height: 10em;
 }
 
 .ui-widget-content {
