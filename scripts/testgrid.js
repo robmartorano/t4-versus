@@ -189,7 +189,7 @@ $(function() {
 	          design_name: currentDesignName
 	      },
 	      success: function(data) {
-			$('#saving-update-success').text("");
+			$('#saving-update-error').text("");
 			$('#saving-update-success').text("saved");
 	        console.log(data);
 	      }
@@ -223,6 +223,7 @@ $(function() {
 		else {
 			$('#current-design-name').removeClass('error-input');
 			$('#saving-update-error').text("");
+			$('#saving-update-success').text("saved");
 			save();
 		}
 	});
@@ -251,9 +252,10 @@ $(function() {
 					//data = $.parseJSON(data);
 					//console.log("data: " + data);
 					if (data.indexOf("Error") > -1 ) {
-						$('saving-update-error').text(data);
+						$('#saving-update-error').text(data);
 					}
 					else {
+						$('#saving-update-error').text("");
 						$('#saving-update-success').text("loaded");
 						$('#current-design-name').val(designToLoad);
 						$('#workspace').html("");
