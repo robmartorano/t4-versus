@@ -28,7 +28,7 @@ if($rows == 0) {
 }
 else {
 	foreach ($result as &$value) {
-		echo "<li class='user-design-list-item'>" . $value . "</li>";
+		echo "<li class='user-design-list-item'>" . $value['design_name'] . "</li>";
 	}
 }
 ?>
