@@ -35,6 +35,22 @@ body {
 #logo {
   float: left; }
 
+#design-details-section {
+  margin-top: 4em;
+  margin-bottom: 1em; }
+
+#design-details-section-item {
+  display: inline; }
+
+#current-design-name {
+  border: 0px;
+  border-radius: .25em;
+  width: 60px;
+  padding: 5px; }
+
+.error-input {
+  border: 2px solid red; }
+
 #workspace {
   display: inline-block;
   float: left;
@@ -44,7 +60,7 @@ body {
   vertical-align: top;
   margin-left: 1em;
   margin-right: 1em;
-  margin-top: 4em;
+  margin-top: 1em;
   margin-bottom: 2em;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
   position: relative; }

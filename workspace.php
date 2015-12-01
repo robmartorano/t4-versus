@@ -26,9 +26,9 @@
 
         
         <div id="design-details-section" style="margin-top: 4em;">
-            <label for="current-design-name" id="current-design-name-label">Design Name</label>
-            <input type="text" id="current-design-name">
-            <p id="saving-update" style="color:red;"></p>
+            <label class="design-details-section-item" for="current-design-name" id="current-design-name-label">Design Name</label>
+            <input class="design-details-section-item" type="text" id="current-design-name">
+            <p class="design-details-section-item" id="saving-update" style="color:red;"></p>
         </div>
         
         <div id="workspace"></div>
