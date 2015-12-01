@@ -297,12 +297,11 @@ $(function() {
 		     	 success: function(data) {
 		      	  console.log(data);
 		      	  // TODO add design name to design list in side panel
-		      	}
+		      	}	
 		    });
 
     		currentDesignName = input;
-	  	}
-	});
+	  	});
 
 	/*var autosaver = setInterval(function() 
 		{ save(); document.getElementById("demo").innerHTML =
@@ -352,7 +351,7 @@ $(function() {
 							//$('.delete-gridbox').click(deleteGridbox);
 						});
 					}
-		      	},
+		      	}).
 				error: function(textStatus, errorThrown) {
 					$('saving-update-error').text("failed to load the data: " + errorThrown);
 					console.log("failed to check design data: " + textStatus + " " + errorThrown);
