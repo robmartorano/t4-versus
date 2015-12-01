@@ -43,19 +43,21 @@ body {
   width: 51em; }
 
 .design-details-section-item {
-  display: inline; }
+  display: inline;
+  margin-right: 1em; }
 
 #current-design-name {
   border: 0px;
   border-radius: .25em;
-  width: 120px;
+  width: 25%;
   padding: 5px; }
 
 .error-input {
   border: 2px solid red; }
 
 #saving-update {
-  color: red; }
+  color: red;
+  min-width: 50%; }
 
 #workspace {
   display: inline-block;

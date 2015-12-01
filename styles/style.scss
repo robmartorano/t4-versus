@@ -64,12 +64,13 @@ body {
 
 .design-details-section-item {
     display: inline;
+    margin-right: 1em;
 }
 
 #current-design-name {
     border: 0px;
     border-radius: .25em;
-    width: 120px;
+    width: 25%;
     padding: 5px;
 }
 
@@ -79,6 +80,7 @@ body {
 
 #saving-update {
     color: red;
+    min-width: 50%;
 }
 
 #workspace {
