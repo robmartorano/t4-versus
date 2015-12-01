@@ -24,11 +24,15 @@
             </nav>
         </header>
 
-        <p id="saving-update"></p>
-
-        <div id="workspace">
-
-        </div><!--end workspace-->
+        
+        <div id="design-details-section">
+            <label class="design-details-section-item" for="current-design-name" id="current-design-name-label">Design Name: </label>
+            <input class="design-details-section-item" type="text" id="current-design-name">
+            <div class="design-details-section-item" id="saving-update-success"></div>
+            <div class="design-details-section-item" id="saving-update-error"></div>
+        </div>
+        
+        <div id="workspace"></div>
 
         <div id="right-panel" draggable="true">
             <h3 id="right-panel-title">Editing Panel</h3>
@@ -98,9 +102,7 @@
             <div class="cd-panel-container">
                 <div class="cd-panel-content">
                     <ul id="panel-designs-list">
-                        <li id="design-one">Design 1</li> 
-                        <li>Design 2</li>
-                        <li>Design 3</li>
+                        <?php require_once("load_designs_list.php"); ?>
                     </ul>
                 </div> <!-- end cd-panel-content -->
             </div> <!-- end cd-panel-container -->

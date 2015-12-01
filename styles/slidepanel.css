@@ -103,3 +103,15 @@
 	transform: translate3d(0, 0, 0);
 	transition-delay: 0s;
 }
+
+#panel-designs-list {
+  list-style-type: none;
+}
+
+.user-design-list-item {
+  color: #6b8eb2;
+}
+.user-design-list-item:hover {
+  opacity: .8;
+  font-style: italic;
+}

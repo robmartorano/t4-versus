@@ -54,6 +54,35 @@ body {
     float: left;
 }
 
+#design-details-section {
+    margin-left: 1em;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    width: 51em;
+}
+
+.design-details-section-item {
+    display: inline;
+    margin-right: 1em;
+}
+
+#current-design-name {
+    border: 0px;
+    border-radius: .25em;
+    width: 25%;
+    padding: 5px;
+}
+
+.error-input {
+    border: 2px solid red;
+}
+
+#saving-update {
+    color: red;
+    min-width: 50%;
+}
+
 #workspace {
     display: inline-block;
     float: left;
@@ -63,7 +92,7 @@ body {
     vertical-align: top;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: 4em;
+    margin-top: 1em;
     margin-bottom: 2em;
     box-shadow: $box-shadow;
     position: relative;

@@ -117,3 +117,9 @@ th, td {
 .ui-widget-content {
 	background: transparent;
 }
+
+@media print {
+    .delete-gridbox {
+        display: none;
+    }
+}
