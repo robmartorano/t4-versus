@@ -189,6 +189,7 @@ $(function() {
 	          design_name: currentDesignName
 	      },
 	      success: function(data) {
+			$('#saving-update-success').text("");
 			$('#saving-update-success').text("saved");
 	        console.log(data);
 	      }
@@ -253,8 +254,9 @@ $(function() {
 						$('saving-update-error').text(data);
 					}
 					else {
-						$('saving-update-success').text("loaded");
+						$('#saving-update-success').text("loaded");
 						$('#current-design-name').val(designToLoad);
+						$('#workspace').html("");
 						data = $.parseJSON(data);
 						$('#workspace').append(data.html);
 						count = data.count; 
@@ -271,6 +273,7 @@ $(function() {
 					}
 		      	},
 				error: function(textStatus, errorThrown) {
+					$('saving-update-error').text("failed to load the data: " + errorThrown);
 					console.log("failed to check design data: " + textStatus + " " + errorThrown);
 					return "already exists";
 				}
