@@ -25,10 +25,10 @@
         </header>
 
         
-        <div id="design-details-section" style="margin-top: 4em;">
+        <div id="design-details-section">
             <label class="design-details-section-item" for="current-design-name" id="current-design-name-label">Design Name</label>
             <input class="design-details-section-item" type="text" id="current-design-name">
-            <p class="design-details-section-item" id="saving-update" style="color:red;"></p>
+            <div class="design-details-section-item" id="saving-update"></div>
         </div>
         
         <div id="workspace"></div>
