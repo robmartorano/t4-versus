@@ -165,6 +165,17 @@ $(function() {
   		});
   		
   	});
+	  
+	var userDesignList = [];
+	
+	function updateDesignList() {
+		$( ".user-design-list-item" ).each(function( index ) {
+			userDesignList.push($(this).text());
+		});
+		console.log("user design list: " + userDesignList);
+	}
+	
+	updateDesignList();
 
   	function strcmp ( str1, str2 ) {
     // http://kevin.vanzonneveld.net
@@ -202,6 +213,13 @@ $(function() {
   	}
 
   	function checkDuplicateDesignName(wantedName) {
+		  if (userDesignList.indexOf(wantedName) > -1) {
+			  return "already exists";
+		  }
+		  else {
+			  return "does not exist";
+		  }
+		  /*
   		$.ajax({
   			type: "POST",
   			url: "checkduplicatedesign.php",
@@ -219,17 +237,18 @@ $(function() {
   			}
 
   		});
+		  */
   	}
 
 	$('#save-button').click(function() {
 		/* save as */
 		if (currentDesignName == null) {
-			/*
+			
 	    	var input = prompt("Please enter a name for your new design:");
 	    	while (input == null || input == "") {
 	    		input = prompt("You must give your design a name:");
 	    	};
-	    	while (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
+	    	while (checkDuplicateDesignName(input) == "already exists") {
 	    		input = prompt("Sorry, you already have a design by that name. Please enter another name:");
 	    		checkDuplicateDesignName(input);
 	    	};
@@ -253,12 +272,12 @@ $(function() {
 		    });
 
     		currentDesignName = input;
-			*/
+			
 	  	}
 	  	/* save */
-	  	//else {
+	  	else {
 	  		save();
-	  	//}
+	  	}
 	});
 
 	/*var autosaver = setInterval(function() 
