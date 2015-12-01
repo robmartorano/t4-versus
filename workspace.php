@@ -26,9 +26,10 @@
 
         
         <div id="design-details-section">
-            <label class="design-details-section-item" for="current-design-name" id="current-design-name-label">Design Name</label>
+            <label class="design-details-section-item" for="current-design-name" id="current-design-name-label">Design Name: </label>
             <input class="design-details-section-item" type="text" id="current-design-name">
-            <div class="design-details-section-item" id="saving-update"></div>
+            <div class="design-details-section-item" id="saving-update-success"></div>
+            <div class="design-details-section-item" id="saving-update-error"></div>
         </div>
         
         <div id="workspace"></div>

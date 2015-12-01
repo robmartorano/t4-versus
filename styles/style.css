@@ -44,20 +44,33 @@ body {
 
 .design-details-section-item {
   display: inline;
-  margin-right: 1em; }
+}
+
+#current-design-name-label {
+  font-size: 20px;
+  margin-right: 5px;
+}
 
 #current-design-name {
   border: 0px;
   border-radius: .25em;
   width: 25%;
-  padding: 5px; }
+  height: 18px;
+  padding: 5px; 
+  margin-right: 1em;
+  }
 
 .error-input {
   border: 2px solid red; }
 
-#saving-update {
+#saving-update-error {
   color: red;
   min-width: 50%; }
+  
+#saving-update-success {
+  color: green;
+  min-width: 50%;
+}
 
 #workspace {
   display: inline-block;
@@ -262,7 +275,7 @@ body {
           outline-width: 1px; }
 
 @media print {
-  #right-panel, header {
+  #right-panel, header,  #design-details-section {
     display: none; }
 
   @page {

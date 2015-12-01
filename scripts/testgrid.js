@@ -171,7 +171,7 @@ $(function() {
 	$( ".user-design-list-item" ).each(function( index ) {
 		userDesignList.push($(this).text());
 	});
-	console.log("user design list: " + userDesignList);
+	//console.log("user design list: " + userDesignList);
 
   	function save(){
 		currentDesignName = $('#current-design-name').val();
@@ -189,6 +189,7 @@ $(function() {
 	          design_name: currentDesignName
 	      },
 	      success: function(data) {
+			$('#saving-update-success').text("saved");
 	        console.log(data);
 	      }
 	    });
@@ -204,29 +205,36 @@ $(function() {
   	}
 
 	$('#save-button').click(function() {
-		if (currentDesignName == null) {
-			var input = alert("Please enter a name for your new design:");
-			if (input == null || input == "") {
-				input = alert("You must give your design a name:");
-				return;
-			};
-			if (checkDuplicateDesignName(input) == "already exists") {
-				input = alert("Sorry, you already have a design by that name. Please enter another name:");
-				return;
-			};
-			currentDesignName = input;
+		if ($('#current-design-name').val() == null || $('#current-design-name').val() == "") {
+			console.log("Saving but design name is empty");
+			$('#current-design-name').addClass('error-input');
+			$('#saving-update-error').text("You must give your design a name.");
+			return;
 		}
-		save();
+		
+		if (checkDuplicateDesignName($('#current-design-name').val()) == "already exists") {
+			console.log("Design already exists");
+			$('#current-design-name').addClass('error-input');
+			$('#saving-update-error').text("Sorry, you already have a design by that name. Please enter another name.");
+			return;
+		}
+		
+		else {
+			$('#current-design-name').removeClass('error-input');
+			$('#saving-update-error').text("");
+			save();
+		}
 	});
 
 	/* Autosave only runs if a design has been loaded into the page */
+	/*
 	var autosaver = setInterval(function() {
 		if (currentDesignName != null) {
 			save();
 		}
 		$('#saving-update').text("autosaved");
 	}, 5000);
-
+	*/
 	/* Load a design */
 	$('.user-design-list-item').click(function() {
 		var designToLoad = $(this).text();
@@ -242,9 +250,10 @@ $(function() {
 					//data = $.parseJSON(data);
 					//console.log("data: " + data);
 					if (data.indexOf("Error") > -1 ) {
-						$('saving-update').text(data);
+						$('saving-update-error').text(data);
 					}
 					else {
+						$('saving-update-success').text("loaded");
 						$('#current-design-name').val(designToLoad);
 						data = $.parseJSON(data);
 						$('#workspace').append(data.html);
