@@ -98,9 +98,7 @@
             <div class="cd-panel-container">
                 <div class="cd-panel-content">
                     <ul id="panel-designs-list">
-                        <li id="design-one">Design 1</li> 
-                        <li>Design 2</li>
-                        <li>Design 3</li>
+                        <?php require_once("load_designs_list.php"); ?>
                     </ul>
                 </div> <!-- end cd-panel-content -->
             </div> <!-- end cd-panel-container -->
