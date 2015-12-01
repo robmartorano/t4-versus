@@ -181,6 +181,7 @@ $(function() {
 	}
 
   	function save(){
+		currentDesignName = $('#current-design-name').val(); // TODO remove later
   		var workspaceHTML = $('#workspace').html();
 	    var saveJSON = {
 	    	"html": workspaceHTML,
@@ -223,6 +224,7 @@ $(function() {
 	$('#save-button').click(function() {
 		/* save as */
 		if (currentDesignName == null) {
+			/*
 	    	var input = prompt("Please enter a name for your new design:");
 	    	while (input == null || input == "") {
 	    		input = prompt("You must give your design a name:");
@@ -251,37 +253,54 @@ $(function() {
 		    });
 
     		currentDesignName = input;
+			*/
 	  	}
 	  	/* save */
-	  	else {
+	  	//else {
 	  		save();
-	  	}
+	  	//}
 	});
 
 	/*var autosaver = setInterval(function() 
 		{ save(); document.getElementById("demo").innerHTML =
         		"Autosaved.";}, 5000);*/
 
-	$('#design-one').click(function() {
-		console.log("getting file");
-		$.get('loadWorkspace.php', function(data) {
-			console.log("data: " + data);
-			data = $.parseJSON(data);
-			$('#workspace').append(data.html);
-			count = data.count; 
-			$('.cd-panel').removeClass('is-visible');
-
-			$('#workspace').children().each(function() {
-				$('.testgridbox').resizable({
-	  				handles: "se"
-	  			});
-	  			//$(this).on('dragstart', drag_start);
-	  			//$('.boxlist-input').keyup(addListboxKeyListeners);
-	  			//$('.delete-gridbox').click(deleteGridbox);
-			});
-
-		}).fail(function(jqXHR, textStatus, error) {
-			console.log("Failed to load design because: " + error);
+	$('.user-design-list-item').click(function() {
+		var designToLoad = $(this).text();
+		console.log("getting file for: " + designToLoad);
+		$.ajax({
+		     	type : "POST",
+		      	url : "loadWorkspace.php",
+		      	data : {
+		          	design_name: designToLoad
+		     	 },
+		     	 success: function(data) {
+		      	  	console.log("data: " + data);
+					//data = $.parseJSON(data);
+					//console.log("data: " + data);
+					if (data.indexOf("Error") > -1 ) {
+						$('saving-update').text(data);
+					}
+					else {
+						data = $.parseJSON(data);
+						$('#workspace').append(data.html);
+						count = data.count; 
+						$('.cd-panel').removeClass('is-visible');
+			
+						$('#workspace').children().each(function() {
+							$('.testgridbox').resizable({
+								handles: "se"
+							});
+							//$(this).on('dragstart', drag_start);
+							//$('.boxlist-input').keyup(addListboxKeyListeners);
+							//$('.delete-gridbox').click(deleteGridbox);
+						});
+					}
+		      	},
+				error: function(textStatus, errorThrown) {
+					console.log("failed to check design data: " + textStatus + " " + errorThrown);
+					return "already exists";
+				}
 		});
 	});
 

@@ -24,11 +24,14 @@
             </nav>
         </header>
 
-        <p id="saving-update"></p>
-
-        <div id="workspace">
-
-        </div><!--end workspace-->
+        
+        <div id="design-details-section" style="margin-top: 4em;">
+            <label for="current-design-name" id="current-design-name-label">Design Name</label>
+            <input type="text" id="current-design-name">
+            <p id="saving-update" style="color:red;"></p>
+        </div>
+        
+        <div id="workspace"></div>
 
         <div id="right-panel" draggable="true">
             <h3 id="right-panel-title">Editing Panel</h3>

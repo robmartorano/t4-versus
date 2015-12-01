@@ -108,10 +108,10 @@
   list-style-type: none;
 }
 
-#user-design-list-item {
+.user-design-list-item {
   color: #6b8eb2;
 }
-#user-design-list-item:hover {
+.user-design-list-item:hover {
   opacity: .8;
   font-style: italic;
 }
