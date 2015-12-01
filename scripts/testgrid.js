@@ -201,9 +201,11 @@ $(function() {
   	}
 
   	function checkDuplicateDesignName(wantedName) {
-  		$.ajax({
+  		return $.ajax({
   			type: "POST",
+  			dataType: 'text',
   			url: "checkduplicatedesign.php",
+  			async: false,
   			data: {
   				"wanted_name": wantedName
   			},
@@ -217,20 +219,33 @@ $(function() {
   				return "already exists";
   			}
 
-  		});
+  		}).responseText;
   	}
 
+
 	$('#save-button').click(function() {
-		/* save as */
+		/* save as 
 		if (currentDesignName == null) {
 	    	var input = prompt("Please enter a name for your new design:");
+
+	    	/* preventing null naming entries
 	    	while (input == null || input == "") {
 	    		input = prompt("You must give your design a name:");
 	    	};
-	    	while (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
-	    		input = prompt("Sorry, you already have a design by that name. Please enter another name:");
-	    		checkDuplicateDesignName(input);
-	    	};
+	    	/* preventing duplicate naming 
+	    	checkDuplicateDesignName(input).then(function(data) {
+	
+	    	});
+	    	if (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
+	    		passNameTest = false;
+	    		while (passNameTest == false) {
+	    			input = prompt("Sorry, you already have a design by that name. Enter another:");
+	    			if (strcmp(checkDuplicateDesignName(input),"does not exist") == 0) {
+	    				passNameTest = true;
+	    			}
+	    		};
+	    	}
+
 	  		var workspaceHTML = $('#workspace').html();
 	  		var saveJSON = {
 			    "html": workspaceHTML,
@@ -252,10 +267,10 @@ $(function() {
 
     		currentDesignName = input;
 	  	}
-	  	/* save */
-	  	else {
+	  	/* save 
+	  	else {*/
 	  		save();
-	  	}
+	  	/*}*/
 	});
 
 	/*var autosaver = setInterval(function() 
