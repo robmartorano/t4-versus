@@ -20,8 +20,9 @@ try {
 $sqlq = "INSERT INTO designs (user_id, filename, design_name, time_saved) VALUES (:user_id, :filename, :design_name,:time_saved)";
 
 $user_id = $_SESSION['user_id'];
-$filename = md5($_SESSION['email'] . date_default_timezone_get());
 $mysqldate = date('Y/m/d H:i:s');
+$filename = md5($_SESSION['email'] . $design_name . $mysqldate);
+
 
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':user_id' => $user_id, ':filename' => $filename, ':design_name' => $design_name, ':time_saved' => $mysqldate));
