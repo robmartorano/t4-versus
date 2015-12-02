@@ -1,4 +1,4 @@
-<!--PUT THE PHP REQUIRE LOGIN_SUCCESS BACK HERE-->
+<?php require_once('login_success.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
