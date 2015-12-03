@@ -8,6 +8,10 @@
     max-width: 100%;
     height: auto;
     max-height: 100%;
+    background-color: white !important;
+} .testgridbox:hover {
+    opacity: 0.7;
+    border-color: #99CCFF;
 }
 
 .addrow-gridbox {
@@ -15,7 +19,6 @@
 	right: 28px;
 	top: 0;
 	color: #E5E5E5;
-
 } .addrow-gridbox:hover {
 	color: #666666;
     cursor: pointer;
@@ -26,7 +29,6 @@
 	right: 18px;
 	top: 0;
 	color: #E5E5E5;
-
 } .deleterow-gridbox:hover {
 	color: #666666;
     cursor: pointer;
@@ -37,7 +39,6 @@
 	right: 6px;
 	top: 0;
 	color: #E5E5E5;
-
 } .delete-gridbox:hover {
 	color: #666666;
     cursor: pointer;
@@ -146,6 +147,7 @@ th, td {
     border: none;
     font-family: inherit;
     outline: none;
+    background: transparent;
 } .month-input:focus {
     border-bottom: 1px #99CCFF solid;
 }
@@ -161,6 +163,7 @@ th, td {
     border: none;
     font-family: inherit;
     outline: none;
+    background: transparent;
 } .week-input:focus {
     border-bottom: 1px #99CCFF solid;
 }

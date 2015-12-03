@@ -53,12 +53,31 @@ body {
 
 #current-design-name {
   border: 0px;
-  border-radius: .25em;
-  width: 25%;
-  height: 18px;
+  width: 30%;
+  font-size: 18px;
   padding: 5px; 
   margin-right: 1em;
-  }
+  background: transparent;
+  border-bottom: 1px #99CCFF solid;
+  outline: none;
+} #current-design-name:focus {
+  background: white;
+}
+
+.save-print-button {
+    width: 15%;
+    height: 29px;
+    border: 1px solid #D75404;
+    border-radius: .25em;
+    background-color: #D75404;
+    margin: 1em 1em;
+    color: white;
+    padding: 0px 10px;
+    transition: all .25s; 
+} .save-print-button:hover {
+  background-color: #a54003;
+  border: 1px solid #a54003;
+}
 
 .error-input {
   border: 2px solid red; }
@@ -230,7 +249,7 @@ body {
         padding-bottom: 1em;
         display: none;
         font-size: .75em; }
-        #right-panel ul li .panel-section button, #right-panel ul li .panel-section .save-preview-print-button {
+        #right-panel ul li .panel-section button {
           width: auto;
           height: 2.5em;
           border: 1px solid #a54003;

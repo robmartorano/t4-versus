@@ -30,6 +30,8 @@
             <input class="design-details-section-item" type="text" id="current-design-name">
             <div class="design-details-section-item" id="saving-update-success"></div>
             <div class="design-details-section-item" id="saving-update-error"></div>
+            <button class="design-details-section-item save-print-button" id="save-button">Save</button>
+            <button class="design-details-section-item save-print-button" id="print-button">Print</button>
         </div>
         
         <div id="workspace"></div>
@@ -81,7 +83,7 @@
                 </li><!--end design-components-->
                 <li>
                     <input type="checkbox" id="save-preview-print-checkbox">
-                    <label class="panel-section-title" for="save-preview-print-checkbox"><i></i>Save, Preview, Print</label>
+                    <label class="panel-section-title" for="save-preview-print-checkbox"><i></i>Save, Print</label>
                     <div class="panel-section">
                         <button class="save-preview-print-button" id="save-button">Save</button>
                         <button class="save-preview-print-button" id="print-button">Print</button>
