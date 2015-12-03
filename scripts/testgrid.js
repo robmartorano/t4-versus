@@ -249,12 +249,10 @@ $(function() {
 	var autosaver = setInterval(function() {
 		if (currentDesignName != null) {
 			save();
+			$('#saving-update-success').text("autosaved");
 		}
-		$('#saving-update').text("autosaved");
 	}, 5000);
 
-
-	/* Load a design */
 	$('.user-design-list-item').click(function() {
 		var designToLoad = $(this).text();
 		console.log("getting file for: " + designToLoad);
@@ -265,45 +263,13 @@ $(function() {
 		          	design_name: designToLoad
 		     	 },
 		     	 success: function(data) {
-		      	  console.log(data);
-		      	  // TODO add design name to design list in side panel
-		      	}	
-		    });
-
-    		currentDesignName = input;
-	});
-
-	/*var autosaver = setInterval(function() 
-		{ save(); document.getElementById("demo").innerHTML =
-        		"Autosaved.";}, 5000);*/
-
-	$('#design-one').click(function() {
-		console.log("getting file");
-		$.get('loadWorkspace.php', function(data) {
-			console.log("data: " + data);
-			data = $.parseJSON(data);
-			$('#workspace').append(data.html);
-			count = data.count; 
-			$('.cd-panel').removeClass('is-visible');
-
-			$('#workspace').children().each(function() {
-				$('.testgridbox').resizable({
-	  				handles: "se"
-	  			});
-	  			//$(this).on('dragstart', drag_start);
-	  			//$('.boxlist-input').keyup(addListboxKeyListeners);
-	  			//$('.delete-gridbox').click(deleteGridbox);
-			})
-		}).fail(function(jqXHR, textStatus, error) {
-			console.log("Failed to load design because: " + error);
 		      	  	console.log("data: " + data);
 					//data = $.parseJSON(data);
 					//console.log("data: " + data);
 					if (data.indexOf("Error") > -1 ) {
-						$('#saving-update-error').text(data);
+						$('saving-update-error').text(data);
 					}
 					else {
-						$('#saving-update-error').text("");
 						$('#saving-update-success').text("loaded");
 						$('#current-design-name').val(designToLoad);
 						$('#workspace').html("");
@@ -321,6 +287,12 @@ $(function() {
 							//$('.delete-gridbox').click(deleteGridbox);
 						});
 					}
-		      	})
+		      	},
+				error: function(textStatus, errorThrown) {
+					$('saving-update-error').text("failed to load the data: " + errorThrown);
+					console.log("failed to check design data: " + textStatus + " " + errorThrown);
+					return "already exists";
+				}
 		});
+	});
 });
