@@ -197,6 +197,25 @@ $(function() {
   	}
 
   	function checkDuplicateDesignName(wantedName) {
+  		return $.ajax({
+  			type: "POST",
+  			dataType: 'text',
+  			url: "checkduplicatedesign.php",
+  			async: false,
+  			data: {
+  				"wanted_name": wantedName
+  			},
+  			success: function(data) {
+  				//data = $.parseJSON(data);
+  				console.log("check design data: " + data);
+  				return data;
+  			},
+  			error: function(textStatus, errorThrown) {
+  				console.log("failed to check design data: " + textStatus + " " + errorThrown);
+  				return "already exists";
+  			}
+
+  		}).responseText;
 		  if (userDesignList.indexOf(wantedName) > -1) {
 			  return "already exists";
 		  }
@@ -205,7 +224,36 @@ $(function() {
 		  }
   	}
 
+
 	$('#save-button').click(function() {
+		/* save as 
+		if (currentDesignName == null) {
+	    	var input = prompt("Please enter a name for your new design:");
+
+	    	/* preventing null naming entries
+	    	while (input == null || input == "") {
+	    		input = prompt("You must give your design a name:");
+	    	};
+	    	/* preventing duplicate naming 
+	    	checkDuplicateDesignName(input).then(function(data) {
+	
+	    	});
+	    	if (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
+	    		passNameTest = false;
+	    		while (passNameTest == false) {
+	    			input = prompt("Sorry, you already have a design by that name. Enter another:");
+	    			if (strcmp(checkDuplicateDesignName(input),"does not exist") == 0) {
+	    				passNameTest = true;
+	    			}
+	    		};
+	    	}
+
+	  		var workspaceHTML = $('#workspace').html();
+	  		var saveJSON = {
+			    "html": workspaceHTML,
+			    "count": count,
+			};
+	  		$.ajax({*/
 		if ($('#current-design-name').val() == null || $('#current-design-name').val() == "") {
 			console.log("Saving but design name is empty");
 			$('#current-design-name').addClass('error-input');
@@ -229,14 +277,14 @@ $(function() {
 	});
 
 	/* Autosave only runs if a design has been loaded into the page */
-	/*
 	var autosaver = setInterval(function() {
 		if (currentDesignName != null) {
 			save();
 		}
 		$('#saving-update').text("autosaved");
 	}, 5000);
-	*/
+
+
 	/* Load a design */
 	$('.user-design-list-item').click(function() {
 		var designToLoad = $(this).text();
@@ -248,6 +296,38 @@ $(function() {
 		          	design_name: designToLoad
 		     	 },
 		     	 success: function(data) {
+		      	  console.log(data);
+		      	  // TODO add design name to design list in side panel
+		      	}	
+		    });
+
+    		currentDesignName = input;
+	  	});
+
+	/*var autosaver = setInterval(function() 
+		{ save(); document.getElementById("demo").innerHTML =
+        		"Autosaved.";}, 5000);*/
+
+	$('#design-one').click(function() {
+		console.log("getting file");
+		$.get('loadWorkspace.php', function(data) {
+			console.log("data: " + data);
+			data = $.parseJSON(data);
+			$('#workspace').append(data.html);
+			count = data.count; 
+			$('.cd-panel').removeClass('is-visible');
+
+			$('#workspace').children().each(function() {
+				$('.testgridbox').resizable({
+	  				handles: "se"
+	  			});
+	  			//$(this).on('dragstart', drag_start);
+	  			//$('.boxlist-input').keyup(addListboxKeyListeners);
+	  			//$('.delete-gridbox').click(deleteGridbox);
+			});
+
+		}).fail(function(jqXHR, textStatus, error) {
+			console.log("Failed to load design because: " + error);
 		      	  	console.log("data: " + data);
 					//data = $.parseJSON(data);
 					//console.log("data: " + data);
@@ -273,7 +353,7 @@ $(function() {
 							//$('.delete-gridbox').click(deleteGridbox);
 						});
 					}
-		      	},
+		      	}).
 				error: function(textStatus, errorThrown) {
 					$('saving-update-error').text("failed to load the data: " + errorThrown);
 					console.log("failed to check design data: " + textStatus + " " + errorThrown);
