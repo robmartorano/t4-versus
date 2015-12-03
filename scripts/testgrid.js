@@ -228,6 +228,7 @@ $(function() {
 		if ($('#current-design-name').val() == null || $('#current-design-name').val() == "") {
 			console.log("Saving but design name is empty");
 			$('#current-design-name').addClass('error-input');
+			$('#saving-update-success').text("");
 			$('#saving-update-error').text("You must give your design a name.");
 			return;
 		}
@@ -235,6 +236,7 @@ $(function() {
 		if (checkDuplicateDesignName($('#current-design-name').val()) == "already exists") {
 			console.log("Design already exists");
 			$('#current-design-name').addClass('error-input');
+			$('#saving-update-success').text("");
 			$('#saving-update-error').text("Sorry, you already have a design by that name. Please enter another name.");
 			return;
 		}
@@ -267,6 +269,7 @@ $(function() {
 					//data = $.parseJSON(data);
 					//console.log("data: " + data);
 					if (data.indexOf("Error") > -1 ) {
+						$('#saving-update-success').text("");
 						$('saving-update-error').text(data);
 					}
 					else {

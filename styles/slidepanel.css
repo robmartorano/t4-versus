@@ -56,6 +56,7 @@
   background: #dbe2e9;
   z-index: 1400; /* blue header is 1000 */
   box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+  overflow: scroll;
 
   padding-top: 3em;
   -webkit-transition-property: -webkit-transform;
