@@ -91,8 +91,9 @@
     border-color: #99CCFF;
 }
 
-th {
+.header-row, th {
     height: 2em;
+    max-height: 2em;
 }
 th input {
     width: 100%;

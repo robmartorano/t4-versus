@@ -20,21 +20,15 @@
         </header>
 
     	<div class="account-module" id="user-profile">
-    		<img src="images/placeholder-user.png" id="user-image"/>
-    		<div id="user-info"> 
-    			<p><h2><?php echo $_SESSION['first_name']; echo " "; echo $_SESSION['last_name']; ?></h2></p>
-                <p><h4><?php echo $_SESSION['email']; ?></h4></p>
-                <input type="checkbox" id="emails-checkbox" name="emails-checkbox"><label for="emails-checkbox"> receive emails from the gylt team</label>
-                <p><a href="workspace.php" id="user-nav">return to my workspace</a></p>
-    		</div>
+    		<p id="user-name"><h2><?php echo $_SESSION['first_name']; echo " "; echo $_SESSION['last_name']; ?></h2></p>
+            <p id="user-email"><h4><?php echo $_SESSION['email']; ?></h4></p>
+            <p id="user-workspace"><a href="workspace.php" id="user-nav">return to my workspace</a></p>
     	</div><!-- end user-profile -->
 
 		<div class="account-module" id="user-designs">
-    		<h2>designs (3)</h2>
+    		<h2>designs</h2>
     		<div>
-    			<img src="images/placeholder-design.svg"/>
-    			<img src="images/placeholder-design.svg"/>
-    			<img src="images/placeholder-design.svg"/>
+    			<?php require_once("load_designs_list.php"); ?>
     		</div>
     	</div><!--end designs-->
 

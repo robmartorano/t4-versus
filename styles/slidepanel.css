@@ -116,3 +116,21 @@
   opacity: .8;
   font-style: italic;
 }
+
+@media screen and (max-width: 848px) {
+  .cd-panel-header {
+    width: 50%;
+  }
+  .cd-panel-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cd-panel-header {
+    width: 70%;
+  }
+  .cd-panel-container {
+    width: 70%;
+  }
+}

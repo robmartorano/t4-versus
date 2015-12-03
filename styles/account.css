@@ -5,36 +5,27 @@ body {
   background: white;
   display: block;
   margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
   padding: 2em;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   text-align: left; }
 
 #user-profile {
-  margin-top: 5em; }
+  margin-top: 5em; 
+}
 
 /* get all children of user-profile*/
 #user-profile > * {
-  display: inline-block;
+  display: block;
   vertical-align: top; }
-
-#user-image {
-  border-radius: 50%;
-  height: 200px;
-  width: auto; }
-
-#user-info {
-  border-left: 1px #5b5b5b solid;
-  padding-left: 3em;
-  margin-left: 2em;
-  height: 200px; }
-
-#user-designs div img {
-  width: 200px;
-  height: auto;
-  display: inline-block; }
 
 #user-nav {
   text-decoration: none;
-  color: #6b8eb2; }
+  color: #6b8eb2;
+}
 
+#user-designs {
+  margin-bottom: 2em;
+}
 /*# sourceMappingURL=account.css.map */

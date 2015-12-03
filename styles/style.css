@@ -27,7 +27,7 @@ body {
     line-height: 3em;
     /* set to same height as ul so it is vertically centered */ }
     #menu-container #hello-user {
-      width: 10em;
+      width: 25%;
       text-align: right;
     }
     #menu-container .menu-btn .menu-link {
@@ -309,5 +309,15 @@ body {
     display: block;
     margin: 0;
     box-shadow: none; } }
+
+@media screen and (max-width: 848px) {
+  #right-panel {
+    display: none;
+  }
+  
+  .delete-gridbox, .addrow-gridbox, .deleterow-gridbox {
+        display: none;
+   }
+}
 
 /*# sourceMappingURL=style.css.map */

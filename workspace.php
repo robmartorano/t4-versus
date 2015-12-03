@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>gylt</title>
+        <title>GYLT</title>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
         <link rel="stylesheet" href="styles/testgrid.css" />
         <link rel="stylesheet" href="styles/style.css" />
@@ -15,8 +15,8 @@
         <header>
             <nav>
                 <ul id="menu-container">
-                    <li class="menu-btn" id="hello-user">hello <?php if (isset($_SESSION['first_name'])) {echo $_SESSION['first_name'];} ?></li>
-                    <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">gylt</a></li>
+                    <li class="menu-btn" id="hello-user">hello<?php if (isset($_SESSION['first_name'])) {echo ", " . $_SESSION['first_name'];} ?></li>
+                    <li class="menu-btn" id="logo"><a href="index.php" class="menu-link" id="nav-home">GYLT</a></li>
                     <li class="menu-btn" id="designs-menu-btn"><a href="" class="menu-link" id="nav-designs">designs</a></li>
                     <li class="menu-btn" id="account-menu-btn"><a href="account.php" class="menu-link" id="nav-account">account</a></li>
                     <li class="menu-btn" id="signout-menu-btn"><a href="logout.php" class="menu-link" id="nav-signout">sign out</a></li>
@@ -81,15 +81,6 @@
                         </div>
                     </div><!--end panel-section-->
                 </li><!--end design-components-->
-                <li>
-                    <input type="checkbox" id="save-preview-print-checkbox">
-                    <label class="panel-section-title" for="save-preview-print-checkbox"><i></i>Save, Print</label>
-                    <div class="panel-section">
-                        <button class="save-preview-print-button" id="save-button">Save</button>
-                        <button class="save-preview-print-button" id="print-button">Print</button>
-                    </div>
-                </li>
-                    
             </ul>
             
         </div><!--end right-panel-->
