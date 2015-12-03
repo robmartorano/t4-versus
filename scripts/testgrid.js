@@ -67,6 +67,7 @@ $(function() {
 	$('body').on('dragover', drag_over);
 	$('body').on('drop', drop);
 	
+	
 	function deleteGridbox() {
 		console.log('delete gridbox');
 	 	$(this).parent().remove();
@@ -98,6 +99,11 @@ $(function() {
 	$('#workspace').on('click', '.delete-gridbox', deleteGridbox);
 	$('#workspace').on('dragstart', '.testgridbox', drag_start);
 	$('#workspace').on('keyup', '.boxlist-input', addListboxKeyListeners);
+	
+	// update input value so that it will be saved
+	$('#workspace').on('keyup', 'input', function() {
+		$(this).attr('value', $(this).val());
+	});
 
 	var count = 0;
 
@@ -196,25 +202,6 @@ $(function() {
   	}
 
   	function checkDuplicateDesignName(wantedName) {
-  		return $.ajax({
-  			type: "POST",
-  			dataType: 'text',
-  			url: "checkduplicatedesign.php",
-  			async: false,
-  			data: {
-  				"wanted_name": wantedName
-  			},
-  			success: function(data) {
-  				//data = $.parseJSON(data);
-  				console.log("check design data: " + data);
-  				return data;
-  			},
-  			error: function(textStatus, errorThrown) {
-  				console.log("failed to check design data: " + textStatus + " " + errorThrown);
-  				return "already exists";
-  			}
-
-  		}).responseText;
 		  if (userDesignList.indexOf(wantedName) > -1) {
 			  return "already exists";
 		  }

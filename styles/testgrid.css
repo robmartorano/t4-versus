@@ -10,6 +10,28 @@
     max-height: 100%;
 }
 
+.addrow-gridbox {
+	position: absolute;
+	right: 28px;
+	top: 0;
+	color: #E5E5E5;
+
+} .addrow-gridbox:hover {
+	color: #666666;
+    cursor: pointer;
+}
+
+.deleterow-gridbox {
+	position: absolute;
+	right: 18px;
+	top: 0;
+	color: #E5E5E5;
+
+} .deleterow-gridbox:hover {
+	color: #666666;
+    cursor: pointer;
+}
+
 .delete-gridbox {
 	position: absolute;
 	right: 6px;
@@ -117,8 +139,30 @@ th, td {
     height: 2em;
 }
 
+.month-input {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    font-family: inherit;
+    outline: none;
+} .month-input:focus {
+    border-bottom: 1px #99CCFF solid;
+}
+
 .week-main-row {
-    height: 10em;
+    height: 2em;
+}
+
+.week-input {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    font-family: inherit;
+    outline: none;
+} .week-input:focus {
+    border-bottom: 1px #99CCFF solid;
 }
 
 .ui-widget-content {
