@@ -76,8 +76,7 @@ $(function() {
 		// ENTER key
   		if (e.which == 13) {
   			$(this).parent().parent().append('<li class="boxlist-li"><input class="boxlist-input"></li>');
-  			// TO DO: adding listener here occasionally causes double bullet add
-  			//$('.boxlist-input').keyup(addListboxKeyListeners);
+			$(this).parent().next().find(">:first-child").focus();
   		}
   		// DELETE or BACKSPACE key
   		else if (e.which == 8 || e.which == 46) {
@@ -226,34 +225,6 @@ $(function() {
 
 
 	$('#save-button').click(function() {
-		/* save as 
-		if (currentDesignName == null) {
-	    	var input = prompt("Please enter a name for your new design:");
-
-	    	/* preventing null naming entries
-	    	while (input == null || input == "") {
-	    		input = prompt("You must give your design a name:");
-	    	};
-	    	/* preventing duplicate naming 
-	    	checkDuplicateDesignName(input).then(function(data) {
-	
-	    	});
-	    	if (strcmp(checkDuplicateDesignName(input),"already exists") == 0) {
-	    		passNameTest = false;
-	    		while (passNameTest == false) {
-	    			input = prompt("Sorry, you already have a design by that name. Enter another:");
-	    			if (strcmp(checkDuplicateDesignName(input),"does not exist") == 0) {
-	    				passNameTest = true;
-	    			}
-	    		};
-	    	}
-
-	  		var workspaceHTML = $('#workspace').html();
-	  		var saveJSON = {
-			    "html": workspaceHTML,
-			    "count": count,
-			};
-	  		$.ajax({*/
 		if ($('#current-design-name').val() == null || $('#current-design-name').val() == "") {
 			console.log("Saving but design name is empty");
 			$('#current-design-name').addClass('error-input');
@@ -270,8 +241,6 @@ $(function() {
 		
 		else {
 			$('#current-design-name').removeClass('error-input');
-			$('#saving-update-error').text("");
-			$('#saving-update-success').text("saved");
 			save();
 		}
 	});
@@ -302,7 +271,7 @@ $(function() {
 		    });
 
     		currentDesignName = input;
-	  	});
+	});
 
 	/*var autosaver = setInterval(function() 
 		{ save(); document.getElementById("demo").innerHTML =
@@ -324,8 +293,7 @@ $(function() {
 	  			//$(this).on('dragstart', drag_start);
 	  			//$('.boxlist-input').keyup(addListboxKeyListeners);
 	  			//$('.delete-gridbox').click(deleteGridbox);
-			});
-
+			})
 		}).fail(function(jqXHR, textStatus, error) {
 			console.log("Failed to load design because: " + error);
 		      	  	console.log("data: " + data);
@@ -353,13 +321,6 @@ $(function() {
 							//$('.delete-gridbox').click(deleteGridbox);
 						});
 					}
-		      	}).
-				error: function(textStatus, errorThrown) {
-					$('saving-update-error').text("failed to load the data: " + errorThrown);
-					console.log("failed to check design data: " + textStatus + " " + errorThrown);
-					return "already exists";
-				}
+		      	})
 		});
-	});
-
 });
