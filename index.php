@@ -45,6 +45,13 @@
         </div><!--end welcome-center-container-->
         <footer>
             <a href="" id="about-link">what is <span>gylt</span>?</a>
+            <div class="gylt-description">
+                <div>Gylt is a powerful tool that answers the needs of people who want 
+                    to have a physical planner or calendar to write in, but also want 
+                    the customizability that a digital planner provides. It is an online
+                     platform that provides the tools users need to design their own calendar.
+                </div>
+            </div>
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>

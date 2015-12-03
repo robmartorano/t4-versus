@@ -44,7 +44,9 @@ body {
   margin-top: 5em;
   margin-bottom: 1em;
   margin-right: 1em;
-  width: 51em; }
+  width: 51em; 
+  text-align: center;
+  }
 
 .design-details-section-item {
   display: inline;
