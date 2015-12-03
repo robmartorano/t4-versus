@@ -23,10 +23,9 @@
             <button class="bold-button" id="login-button">login</button>
             
             <form action="signup.php" method="post"  class="login-signup" id="sign-up-section">
-                <img src="images/facebook.png" class="facebook"/>
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                <fb:login-button scope="public_profile,email" size="xlarge" onlogin="checkSignupState();">
                 </fb:login-button>
-                <div id="status"></div>
+                <div class="fb-status-message" id="signup-status"></div>
                 <input placeholder="first name" name="first-name" id="first-name" autofocus required>
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
@@ -35,10 +34,9 @@
             </form>
                 
             <form action="checklogin.php" method="post" class="login-signup" id="login-section">
-                <img src="images/facebook.png" class="facebook"/>
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                <fb:login-button scope="public_profile,email" size="xlarge" onlogin="checkLoginState();">
                 </fb:login-button>
-                <div id="status"></div>
+                <div class="fb-status-message" id="login-status"></div>
                 <input placeholder="email address" name="login-email" id="login-email" required>
                 <input type="password" placeholder="password" name="login-password" id="login-password" required>
                 <button class="bold-button" id="login-go" type="submit">login</button>
@@ -54,6 +52,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
 
         <script src="scripts/app.js"></script>
+        <script src="scripts/fblogin.js"></script>
 
     </body>
 </html>

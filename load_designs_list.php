@@ -1,5 +1,4 @@
 <?php
-session_start();
 error_reporting(E_ALL);
 
 $dsn = 'mysql:host=cgi.cs.duke.edu;port=3306;dbname=rz30;';

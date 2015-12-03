@@ -42,7 +42,6 @@ elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$getready->execute(array(':email' => $email, ':firstname' => $firstname, ':lastname' => $lastname, ':password' => $password));
 
 		$msg = 'You have successfully signed up. Please verify by clicking the activation link that has been sent to your email.';
-		echo 'Welcome to gylt! <a href='workspace.php'>Start designing here</a>';
 
 		$_SESSION['email'] = $email;
 		$_SESSION['first_name'] = $firstname;

@@ -85,6 +85,12 @@ body#welcome {
       background: #D75404;
       color: white;
       width: 250px; }
+      
+      
+.fb-status-message {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 footer {
   position: absolute;

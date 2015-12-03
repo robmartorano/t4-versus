@@ -34,6 +34,7 @@ $(function() {
 	    }
 	    alreadyMoved = true;
 	});
+	
 
 	/* slide panel toggle */
 	$('#nav-designs').on('click', function(event){
