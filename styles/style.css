@@ -310,14 +310,37 @@ body {
     margin: 0;
     box-shadow: none; } }
 
-@media screen and (max-width: 848px) {
-  #right-panel {
-    display: none;
+@media screen and (max-width: 848px) {  
+  #design-details-section {
+    width: 100%;
   }
-  
-  .delete-gridbox, .addrow-gridbox, .deleterow-gridbox {
+  #current-design-name {
+    width: 50%;
+  }
+  #design-details-section {
+    text-align: center;
+  }
+  #current-design-name-label, #right-panel, .save-print-button, .delete-gridbox, .addrow-gridbox, .deleterow-gridbox {
         display: none;
    }
 }
+
+@media screen and (max-width: 480px) {  
+  #menu-container #hello-user {
+    display: none;
+  }
+}
+
+/* mobile */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
+	#menu-container {
+		height: 9em;
+	}
+	
+	#menu-container .menu-btn {
+		font-size: 3em;
+		width: 6em;
+	}
+} /* end mobile */
 
 /*# sourceMappingURL=style.css.map */

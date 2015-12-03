@@ -25,7 +25,7 @@
   height: 3em;
   line-height: 3em;
   color: white;
-	background-color: #D75404;
+	background-color: #6b8eb2;;
   z-index: 1500;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
   top: -50px;
@@ -37,7 +37,7 @@
 
 .cd-panel-header #panel-header-content {
   font-weight: bold;
-  color: #99CCFF;
+  color: #D75404;
   padding-left: 5%;
 }
 
