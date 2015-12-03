@@ -26,6 +26,10 @@ body {
     height: 100%;
     line-height: 3em;
     /* set to same height as ul so it is vertically centered */ }
+    #menu-container #hello-user {
+      width: 10em;
+      text-align: right;
+    }
     #menu-container .menu-btn .menu-link {
       text-decoration: none;
       color: white; }
@@ -69,6 +73,7 @@ body {
     height: 29px;
     border: 1px solid #D75404;
     border-radius: .25em;
+    font-size: 14px;
     background-color: #D75404;
     margin: 1em 1em;
     color: white;
@@ -176,7 +181,7 @@ body {
   z-index: 900;
   width: 15em;
   left: 1em;
-  top: 4em;
+  top: 9em;
   background: #666666;
   color: white;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);

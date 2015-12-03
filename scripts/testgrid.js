@@ -170,6 +170,21 @@ $(function() {
   		});
   		
   	});
+	  
+	$('#add-day').click(function() {
+  		$.get("templates/day.html", function(data) {
+  			$('#workspace').append(data);
+  			$('#workspace').find('.day').attr('id', count + 'testgridbox');
+
+  			$('#' + count + 'testgridbox').resizable({
+  				handles: "se"
+  			});
+	  		//$('.delete-gridbox').click(deleteGridbox);
+		 	//$('#' + count + 'testgridbox').on('dragstart', drag_start);
+			count++;
+  		});
+  		
+  	});
 	
 	/* to store a list of the user's designs */
 	var userDesignList = [];
