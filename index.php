@@ -25,12 +25,7 @@
             <form action="signup.php" method="post"  class="login-signup" id="sign-up-section">
                 <fb:login-button scope="public_profile,email" size="xlarge" onlogin="checkSignupState();">
                 </fb:login-button>
-<<<<<<< HEAD
                 <div class="fb-status-message" id="signup-status"></div>
-=======
-
-                <div id="status"></div>
->>>>>>> 20af7f6f25c2946d7383252ea9cafb13a1f24716
                 <input placeholder="first name" name="first-name" id="first-name" autofocus required>
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
