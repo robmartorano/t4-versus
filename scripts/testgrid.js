@@ -202,7 +202,7 @@ $(function() {
 	
 
   	function save(){
-		currentDesignName = $('#current-design-name').val();
+		//currentDesignName = $('#current-design-name').val();
   		var workspaceHTML = $('#workspace').html();
 	    var saveJSON = {
 	    	"html": workspaceHTML,
@@ -234,15 +234,17 @@ $(function() {
   	}
 
 
+	//rica and vivian
 	$('#save-button').click(function() {
+	//ensuring users give names to their designs
 		if ($('#current-design-name').val() == null || $('#current-design-name').val() == "") {
-			console.log("Saving but design name is empty");
-			$('#current-design-name').addClass('error-input');
-			$('#saving-update-success').text("");
-			$('#saving-update-error').text("You must give your design a name.");
-			return;
+		console.log("Saving but design name is empty");
+		$('#current-design-name').addClass('error-input');
+		$('#saving-update-success').text("");
+		$('#saving-update-error').text("You must give your design a name.");
+		return;
 		}
-		
+		//preventing duplicate naming for a new design 
 		if (currentDesignName == null && checkDuplicateDesignName($('#current-design-name').val()) == "already exists") {
 			console.log("Design already exists");
 			$('#current-design-name').addClass('error-input');
@@ -250,7 +252,13 @@ $(function() {
 			$('#saving-update-error').text("Sorry, you already have a design by that name. Please enter another name.");
 			return;
 		}
-		
+		//save as
+		if (currentDesignName == null && checkDuplicateDesignName($('#current-design-name').val()) == "does not exist") {
+			$('#current-design-name').removeClass('error-input');
+			currentDesignName = $('#current-design-name').val();
+			save();
+		}
+		//normal save
 		else {
 			$('#current-design-name').removeClass('error-input');
 			save();
