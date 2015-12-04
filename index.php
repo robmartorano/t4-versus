@@ -42,6 +42,11 @@
                 <fb:login-button scope="public_profile,email" size="xlarge" onlogin="checkLoginState();">
                 </fb:login-button>
                 <div class="fb-status-message" id="login-status"></div>
+
+                <?php if (isset($_GET['login_error'])) { ?>
+                    <?php echo htmlspecialchars($_GET['login_error']); ?>
+                <?php } ?>
+
                 <input placeholder="email address" name="login-email" id="login-email" required>
                 <input type="password" placeholder="password" name="login-password" id="login-password" required>
                 <button class="bold-button" id="login-go" type="submit">login</button>

@@ -3,30 +3,23 @@ session_start();
 $dsn = 'mysql:host=cgi.cs.duke.edu;port=3306;dbname=rz30;';
 $username = 'rz30';
 $password = '9klB3Oh7nuMxI';
-
 try {
     $db = new PDO($dsn, $username, $password);
-
 } catch(PDOException $e) {
     die('Could not connect to the database:<br/>' . $e);
 }
-
 $sqlq = "SELECT * FROM users WHERE email=:email";
-
 $login_email = $_POST['login-email']; 
 $login_email = mysql_real_escape_string(strip_tags($login_email));
 $login_password = $_POST['login-password'];
 $login_password = mysql_real_escape_string(strip_tags($login_password));
-
 $getready = $db->prepare($sqlq);
 $getready->execute(array(':email' => $login_email));
 $result = $getready->fetch();
-
 // count number of rows in result
 $rows = count($result);
 //echo "\nCount: ";
 //echo $rows;
-
 // if there is at least one match
 if($rows>=1){
 	if(password_verify($login_password,$result["password"])){
@@ -37,10 +30,10 @@ if($rows>=1){
 		$_SESSION['last_name'] = $result['last_name'];
 		$_SESSION['just_logged_in'] = "yes";
 		header("location:workspace.php");
+		exit();
 	}
-	
 }
-else {
-	echo "Wrong Username or Password";
-}
+
+header('Location: index.php?login_error=Email%20and%20password%20do%20not%20match');
+
 ?>

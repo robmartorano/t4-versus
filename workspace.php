@@ -32,6 +32,7 @@
             <div class="design-details-section-item" id="saving-update-error"></div>
             <button class="design-details-section-item save-print-button" id="save-button">Save</button>
             <button class="design-details-section-item save-print-button" id="print-button">Print</button>
+            <button class="design-details-section-item save-print-button" id="new-design-button">New Design</button>
         </div>
         
         <div id="workspace"></div>

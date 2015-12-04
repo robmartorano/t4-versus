@@ -186,6 +186,12 @@ $(function() {
   		
   	});
 	
+	$('#new-design-button').click(function() {
+		$('#workspace').html("");
+		$('#current-design-name').val("");
+		currentDesignName = null;
+	})
+	
 	/* to store a list of the user's designs */
 	var userDesignList = [];
 	$( ".user-design-list-item" ).each(function( index ) {

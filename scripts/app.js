@@ -2,7 +2,7 @@ $(function() {
 
 	var alreadyMoved = false; // to ensure the welcome container is only moved once
 
-	$('#login-button').click(function() {
+	var showLoginForm = function() {
 		console.log("login click");
 	    $('#sign-up-section').hide();
 	    $('#sign-up-button').removeClass('bold-button-active');
@@ -17,7 +17,33 @@ $(function() {
 			});
 	    }
 	    alreadyMoved = true;
-	});
+	};
+
+	$('#login-button').click(showLoginForm);
+	
+	// TODO: show sign up form if signup_error is present in URL
+	var loginErrorPresentPattern = /[?&]login_error=/;
+	if (loginErrorPresentPattern.exec(window.location)) {
+		showLoginForm();
+	}
+
+
+	// $('#login-button').click(function() {
+	// 	console.log("login click");
+	//     $('#sign-up-section').hide();
+	//     $('#sign-up-button').removeClass('bold-button-active');
+	//     $('#login-button').addClass('bold-button-active');
+	//     $('#login-section').fadeIn();
+	//     $('#login-section').css("display", "block");
+	//     $('#sign-up-section').hide();
+	//     $('#login-email').focus();
+	//     if (!alreadyMoved) {
+	//     	$('#welcome-center-container').animate({
+	// 		    'marginTop' : "-=12%",
+	// 		});
+	//     }
+	//     alreadyMoved = true;
+	// });
 
 	var showSignUpForm = function() {
 		console.log("signup click");
@@ -37,11 +63,12 @@ $(function() {
 
 	$('#sign-up-button').click(showSignUpForm);
 
-	// TODO: show sign up form if signup_error is present in URL
-	var signupErrorPresentPattern = /[?&]signup_error=/;
-	if (signupErrorPresentPattern.exec(window.location)) {
-		showSignUpForm();
+		// TODO: show sign up form if signup_error is present in URL
+		var signupErrorPresentPattern = /[?&]signup_error=/;
+		if (signupErrorPresentPattern.exec(window.location)) {
+			showSignUpForm();
 	}
+
 	
 
 	/* slide panel toggle */
