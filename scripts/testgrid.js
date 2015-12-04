@@ -193,6 +193,8 @@ $(function() {
 	});
 	//console.log("user design list: " + userDesignList);
 
+	
+
   	function save(){
 		currentDesignName = $('#current-design-name').val();
   		var workspaceHTML = $('#workspace').html();
@@ -235,7 +237,7 @@ $(function() {
 			return;
 		}
 		
-		if (checkDuplicateDesignName($('#current-design-name').val()) == "already exists") {
+		if (currentDesignName == null && checkDuplicateDesignName($('#current-design-name').val()) == "already exists") {
 			console.log("Design already exists");
 			$('#current-design-name').addClass('error-input');
 			$('#saving-update-success').text("");

@@ -19,7 +19,7 @@ $(function() {
 	    alreadyMoved = true;
 	});
 
-	$('#sign-up-button').click(function() {
+	var showSignUpForm = function() {
 		console.log("signup click");
 	    $('#login-section').hide();
 	    $('#login-button').removeClass('bold-button-active');
@@ -33,7 +33,15 @@ $(function() {
 			});
 	    }
 	    alreadyMoved = true;
-	});
+	};
+
+	$('#sign-up-button').click(showSignUpForm);
+
+	// TODO: show sign up form if signup_error is present in URL
+	var signupErrorPresentPattern = /[?&]signup_error=/;
+	if (signupErrorPresentPattern.exec(window.location)) {
+		showSignUpForm();
+	}
 	
 
 	/* slide panel toggle */

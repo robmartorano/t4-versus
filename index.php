@@ -26,6 +26,11 @@
                 <fb:login-button scope="public_profile,email" size="xlarge" onlogin="checkSignupState();">
                 </fb:login-button>
                 <div class="fb-status-message" id="signup-status"></div>
+
+                <?php if (isset($_GET['signup_error'])) { ?>
+                    <?php echo htmlspecialchars($_GET['signup_error']); ?>
+                <?php } ?>
+
                 <input placeholder="first name" name="first-name" id="first-name" autofocus required>
                 <input placeholder="last name" name="last-name" id="last-name" required>
                 <input placeholder="email address" name="sign-up-email" id="sign-up-email" required>
